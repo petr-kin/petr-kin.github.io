@@ -1,0 +1,5 @@
+title: Petr's Portfolio
+description: My personal portfolio showcasing my QA and programming skills.
+theme: minima
+baseurl: "" # Leave empty unless you have a subpath (e.g., '/blog')
+url: "https://your-github-username.github.io" # Your site's URL
