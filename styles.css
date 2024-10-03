@@ -17,7 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: radial-gradient(ellipse at bottom right, #013d5d 0%, rgba(0, 0, 0, 0) 50%);
+    background: radial-gradient(ellipse at top right, #013d5d 0%, rgba(0, 0, 0, 0) 50%);
 }
 
 h1 {
