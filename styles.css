@@ -16,7 +16,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-image: radial-gradient(ellipse at top left, #000a93 0%, rgba(0, 0, 0, 0) 50%);
+    background-image: radial-gradient(ellipse at top left, #013d5d 0%, rgba(0, 0, 0, 0) 50%);
     background-size: cover;
     justify-content: center;
     text-align: center;
@@ -65,7 +65,7 @@ body {
 }
 
 .about {
-    background-image: radial-gradient(ellipse at top left, #000a93 0%, rgba(0, 0, 0, 0) 50%);
+    background-image: radial-gradient(ellipse at bottom left, #013d5d 0%, rgba(0, 0, 0, 0) 50%);
     padding: 50px;
     display: flex;
     align-items: center;
@@ -87,7 +87,7 @@ body {
 }
 .skills {
     padding: 50px;
-    background-image: radial-gradient(ellipse at top left, #000a93 0%, rgba(0, 0, 0, 0) 50%);
+    background-image: radial-gradient(ellipse at top left, #013d5d 0%, rgba(0, 0, 0, 0) 50%);
 }
 
 .skills h2 {
