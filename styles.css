@@ -106,16 +106,16 @@ h1 {
     min-width: 250px;
 }
 
-.skill {
+.app {
     margin-bottom: 20px;
 }
 
-.skill span {
+.app span {
     display: block;
     font-weight: bold;
 }
 
-.skill-bar {
+.app-bar {
     background-color: #ddd;
     border-radius: 5px;
     height: 8px;
@@ -126,20 +126,20 @@ h1 {
     background-color: #ffa500;
 }
 
-.skills-icons {
+.app-icons {
     padding: 50px;
     background-color: #f5f5f5;
     text-align: center;
 }
 
-.skills-grid {
+.app-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
 }
 
-.skill {
+.app {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -150,13 +150,13 @@ h1 {
     width: 150px;
 }
 
-.skill img {
+.app img {
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
 }
 
-.skill span {
+.app span {
     font-size: 1rem;
     color: #333;
 }
