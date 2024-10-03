@@ -17,7 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: radial-gradient(ellipse at top right, #013d5d 0%, rgba(0, 0, 0, 0) 50%);
+    background: radial-gradient(ellipse at top left, #013d5d 0%, rgba(0, 0, 0, 0) 50%);
 }
 
 h1 {
@@ -46,10 +46,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-.buttons a:hover {
-    color: #5f533c; /* Orange color on hover */
-}
-
 .btn {
     padding: 10px 20px;
     border-radius: 30px;
@@ -58,6 +54,9 @@ h1 {
     font-size: 1rem;
     text-decoration: none;
     display: inline-block;
+}
+.btn a:hover {
+    color: #d0ce72;
 }
 
 .resume-btn {
