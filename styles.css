@@ -84,3 +84,47 @@ body {
     font-size: 2rem;
     margin-bottom: 20px;
 }
+.skills {
+    padding: 50px;
+    background-color: #f5f5f5;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.category {
+    flex: 1;
+    min-width: 250px;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    width: 100%;
+}
+
+.progress {
+    height: 100%;
+    background-color: #ffa500;
+}
+
