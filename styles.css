@@ -135,11 +135,11 @@ h1 {
 .skill-item {
     display: flex;
     align-items: center;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f4f4f4;
+    padding: 7px;
+    border-radius: 4px;
+    background-color: #bab5b5cd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    width: 200px;
 }
 
 .skill-item img {
