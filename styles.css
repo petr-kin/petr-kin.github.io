@@ -103,6 +103,9 @@ h1 {
 .skills h2 {
     color: #333;
 }
+.skills h3 {
+    color: #ffa500;
+}
 
 .skills-grid {
     display: flex;
