@@ -163,3 +163,39 @@ h1 {
     color: #333;
     margin: 0;
 }
+
+.courses {
+    padding: 50px;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.courses h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.courses-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.course-item {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-item h3 {
+    color: #ffa500;
+    margin-bottom: 10px;
+}
+
+.course-item p {
+    color: #ccc;
+}
