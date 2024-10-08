@@ -136,5 +136,16 @@
                     <p>Completed on Codecademy</p>
                 </div>
         </section>
+        <script>
+            fetch('content.json')
+              .then(response => response.json())
+              .then(data => {
+                document.querySelector('.hero h1').innerText = data.hero.title;
+                document.querySelector('.btn.resume-btn').innerText = data.hero.resumeButton;
+                document.querySelector('.btn.contact-btn').innerText = data.hero.contactButton;
+                document.querySelector('.about h2').innerText = data.about.title;
+                document.querySelector('.about p').innerText = data.about.description;
+              });
+          </script>
 </body>
 </html>

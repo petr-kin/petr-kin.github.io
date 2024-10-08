@@ -1,0 +1,11 @@
+{
+    "hero": {
+      "title": "Welcome, I'm Petr Kindlmann",
+      "resumeButton": "Download Resume",
+      "contactButton": "Get in Touch"
+    },
+    "about": {
+      "title": "About Me",
+      "description": "I'm Petr Kindlmann, a QA Engineer with expertise in automation, blockchain evangelism, and tech leadership."
+    }
+  }
