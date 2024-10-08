@@ -140,11 +140,45 @@
             fetch('content.json')
               .then(response => response.json())
               .then(data => {
+                // Hero Section
                 document.querySelector('.hero h1').innerText = data.hero.title;
                 document.querySelector('.btn.resume-btn').innerText = data.hero.resumeButton;
                 document.querySelector('.btn.contact-btn').innerText = data.hero.contactButton;
+          
+                // Social Links
+                document.querySelector('.social-icons a[href*="github"]').href = data.social.github;
+                document.querySelector('.social-icons a[href*="stackoverflow"]').href = data.social.stackoverflow;
+                document.querySelector('.social-icons a[href*="linkedin"]').href = data.social.linkedin;
+                document.querySelector('.social-icons a[href*="instagram"]').href = data.social.instagram;
+          
+                // About Section
                 document.querySelector('.about h2').innerText = data.about.title;
                 document.querySelector('.about p').innerText = data.about.description;
+          
+                // Skills Section
+                document.querySelector('.skills h1').innerText = data.skills.sectionTitle;
+                const qaTools = data.skills.qaTools.skills;
+                document.querySelector('.category h3').innerText = data.skills.qaTools.title;
+                qaTools.forEach((tool, index) => {
+                  document.querySelectorAll('.skill span')[index].innerText = tool.name;
+                  document.querySelectorAll('.progress')[index].style.width = tool.progress;
+                });
+          
+                // Technologies Section
+                document.querySelector('.technologies h1').innerText = data.technologies.title;
+                const techItems = data.technologies.techList;
+                techItems.forEach((tech, index) => {
+                  document.querySelectorAll('.skill-item img')[index].src = tech.img;
+                  document.querySelectorAll('.skill-item p')[index].innerText = tech.name;
+                });
+          
+                // Courses Section
+                document.querySelector('.courses h1').innerText = data.courses.title;
+                const courses = data.courses.courseList;
+                courses.forEach((course, index) => {
+                  document.querySelectorAll('.course-item h3')[index].innerText = course.name;
+                  document.querySelectorAll('.course-item p')[index].innerText = `Completed on ${course.platform}`;
+                });
               });
           </script>
 </body>

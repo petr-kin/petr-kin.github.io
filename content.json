@@ -1,11 +1,60 @@
-{
+  {
     "hero": {
       "title": "Welcome, I'm Petr Kindlmann",
       "resumeButton": "Download Resume",
       "contactButton": "Get in Touch"
     },
+    "social": {
+      "github": "https://github.com",
+      "stackoverflow": "https://stackoverflow.com",
+      "linkedin": "https://linkedin.com/in/petr-kindlmann",
+      "instagram": "https://instagram.com"
+    },
     "about": {
       "title": "About Me",
-      "description": "I'm Petr Kindlmann, a QA Engineer with expertise in automation, blockchain evangelism, and tech leadership. With a solid foundation in software quality assurance, my role as a QA Engineer at Devcity has been marked by my adeptness in Agile Testing and User Acceptance Testing. My analytical skills are sharpened through continuously refining testing processes and ensuring the highest quality deliverables."
+      "description": "I'm Petr Kindlmann, a QA Engineer with expertise in automation, blockchain evangelism, and tech leadership. With a solid foundation in software quality assurance, my role as a QA Engineer at Devcity has been marked by my adeptness in Agile Testing and User Acceptance Testing. My analytical skills are sharpened through continuously refining testing processes and ensuring the highest quality deliverables.",
+      "interests": "Interests: Blockchain, QA Automation, Photography, and Dancing"
+    },
+    "skills": {
+      "sectionTitle": "Skills",
+      "qaTools": {
+        "title": "QA Tools",
+        "skills": [
+          { "name": "Robot Framework", "progress": "90%" },
+          { "name": "Cypress", "progress": "80%" },
+          { "name": "Selenium", "progress": "85%" }
+        ]
+      },
+      "languages": {
+        "title": "Languages",
+        "skills": [
+          { "name": "Python", "progress": "85%" },
+          { "name": "SQL", "progress": "75%" }
+        ]
+      },
+      "tech": {
+        "title": "Tech",
+        "skills": [
+          { "name": "Docker", "progress": "85%" },
+          { "name": "React", "progress": "75%" }
+        ]
+      }
+    },
+    "technologies": {
+      "title": "Technologies",
+      "techList": [
+        { "name": "Git", "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg" },
+        { "name": "Postman", "img": "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
+        { "name": "NodeJS", "img": "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" },
+        { "name": "Firebase", "img": "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" }
+      ]
+    },
+    "courses": {
+      "title": "Courses I've Taken",
+      "courseList": [
+        { "name": "Introduction to Python", "platform": "Coursera" },
+        { "name": "Automation with Selenium", "platform": "Udemy" },
+        { "name": "React for Beginners", "platform": "Codecademy" }
+      ]
     }
   }
