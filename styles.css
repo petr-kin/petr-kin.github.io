@@ -134,10 +134,14 @@ h1 {
     height: 100%;
     background-color: #ffa500;
 }
+.technologies {
+    background-image: radial-gradient(ellipse at bottom left, #013d5d 0%, rgba(0, 0, 0, 0) 50%);
+    padding: 50px;
+}
 .technologies-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
     justify-content: space-between;
 }
 
@@ -166,7 +170,7 @@ h1 {
 
 .courses {
     padding: 50px;
-    background-image: radial-gradient(ellipse at bottom left, #013d5d 0%, rgba(0, 0, 0, 0) 50%); /* background-color: #1a1a1a; */
+    background-image: radial-gradient(ellipse at top left, #013d5d 0%, rgba(0, 0, 0, 0) 50%); /* background-color: #1a1a1a; */
     color: #fff;
 }
 
