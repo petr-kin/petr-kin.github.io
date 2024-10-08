@@ -134,10 +134,10 @@ h1 {
     height: 100%;
     background-color: #ffa500;
 }
-.skills-grid {
+.technologies-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 5px;
     justify-content: space-between;
 }
 
@@ -166,12 +166,12 @@ h1 {
 
 .courses {
     padding: 50px;
-    background-color: #1a1a1a;
+    background-image: radial-gradient(ellipse at bottom left, #013d5d 0%, rgba(0, 0, 0, 0) 50%); /* background-color: #1a1a1a; */
     color: #fff;
 }
 
 .courses h1 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 30px;
     font-size: 2.5rem;
 }
