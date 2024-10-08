@@ -137,7 +137,7 @@ h1 {
     align-items: center;
     padding: 7px;
     border-radius: 4px;
-    background-color: #c0c0c0; /* or white: ffffff, or gold ffd700 */
+    background-color: #ffffff; /* or white: ffffff, or gold ffd700, grey c0c0c0 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 200px;
 }
