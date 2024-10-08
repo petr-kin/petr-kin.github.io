@@ -144,8 +144,8 @@ h1 {
 .skill-item {
     display: flex;
     align-items: center;
-    padding: 7px;
-    border-radius: 4px;
+    padding: 5px;
+    border-radius: 15px;
     background-color: #ffffff; /* or white: ffffff, or gold ffd700, grey c0c0c0 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 150px;
