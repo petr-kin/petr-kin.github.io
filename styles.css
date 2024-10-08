@@ -70,6 +70,15 @@ h1 {
     color: #fff;
 }
 
+.scroll-down a {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+}
+.scroll-down a:hover {
+    color: #ffa500; /* Change color on hover */
+}
+
 .about {
     padding: 50px;
     background-image: radial-gradient(ellipse at bottom left, #013d5d 0%, rgba(0, 0, 0, 0) 50%);
@@ -139,7 +148,7 @@ h1 {
     border-radius: 4px;
     background-color: #ffffff; /* or white: ffffff, or gold ffd700, grey c0c0c0 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 200px;
+    width: 150px;
 }
 
 .skill-item img {
