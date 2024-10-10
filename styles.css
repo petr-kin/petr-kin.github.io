@@ -206,3 +206,28 @@ h1 {
 .course-item p {
     color: #ccc;
 }
+
+/* Existing styles for desktop/tablet views */
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Media query for smaller screens (like phones) */
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack the image and text vertically */
+        text-align: center; /* Optional: Center the text for better appearance */
+    }
+
+    .profile-pic {
+        margin: 0 auto 20px; /* Center the image and add spacing below */
+    }
+}
