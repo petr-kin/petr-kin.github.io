@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark-theme">
     <div class="container">
         <!-- Navigation -->
         <nav>
@@ -22,50 +22,44 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="toggle-mode">
-                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
             </div>
         </nav>
 
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1>Hello, I'm <span>Petr Kindlmann</span></h1>
-                <h2>QA Engineer & Blockchain Enthusiast</h2>
-                <p>Specializing in test automation and quality assurance with a background in blockchain technology</p>
+                <div class="status">Open to work</div>
+                <h1>QA Engineer</h1>
+                <div class="contact-info">
+                    <p>thepetr@gmail.com</p>
+                    <p>linkedin.com/in/petr-kindlmann</p>
+                    <p>České Budějovice, Czechia</p>
+                </div>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn primary">Get in Touch</a>
                     <a href="CV_Petr_Kindlmann.pdf" class="btn secondary" download>Download CV</a>
                 </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-circle"></div>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="about">
             <div class="section-header">
-                <h2>About Me</h2>
+                <h2>Summary</h2>
                 <div class="separator"></div>
             </div>
             <div class="about-content">
+                <div class="traits">
+                    <ul>
+                        <li>Rational, analytical, and logical</li>
+                        <li>Always thinking outside the box</li>
+                        <li>Detail-oriented, creative, and intellectual mind</li>
+                        <li>Independent and flexible self-learner</li>
+                    </ul>
+                </div>
                 <div class="about-text">
-                    <p>I'm a QA Engineer with extensive experience in automation testing, blockchain technology, and technical leadership. With a background spanning from QA engineering to blockchain evangelism, I bring a unique perspective to quality assurance in tech products.</p>
-                    <p>Currently based in Prague, Czech Republic, I focus on creating robust test automation frameworks and ensuring product quality across web and mobile platforms.</p>
-                    <div class="personal-info">
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>České Budějovice, Czechia</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>thepetr@gmail.com</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-language"></i>
-                            <span>Czech (native), English (C1), German (B1), Chinese (A1)</span>
-                        </div>
-                    </div>
+                    <p>With a solid foundation in software quality assurance, my role as a QA Engineer at Devcity has been marked by my adeptness in Agile Testing and User Acceptance Testing. My analytical skills are sharpened through continuously refining testing processes and ensuring the highest quality deliverables.</p>
                     <div class="social-links">
                         <a href="https://linkedin.com/in/petr-kindlmann" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
@@ -79,53 +73,54 @@
         <!-- Experience Section -->
         <section id="experience" class="experience">
             <div class="section-header">
-                <h2>Experience</h2>
+                <h2>Work Experience</h2>
                 <div class="separator"></div>
             </div>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2022 - Present</div>
-                    <div class="timeline-content">
+                <div class="experience-item">
+                    <div class="experience-header">
                         <h3>QA Engineer</h3>
-                        <h4>Devcity, Prague</h4>
+                        <span class="company">Devcity</span>
+                        <span class="period">2022 - Present</span>
+                    </div>
+                    <div class="experience-body">
                         <p>Test case creation and management for CMS and video platform products. Perform regression, manual, smoke, compatibility, and UI testing using Jira, Confluence.</p>
+                        <ul class="experience-achievements">
+                            <li>Conducted user research and usability testing to drive design decisions</li>
+                            <li>Created wireframes, prototypes, and high-fidelity visual designs</li>
+                            <li>Developed and maintained testing systems for consistent quality assurance</li>
+                            <li>Worked cross-functionally with product managers and developers</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2021</div>
-                    <div class="timeline-content">
+                <div class="experience-item">
+                    <div class="experience-header">
                         <h3>QA Engineer</h3>
-                        <h4>Kindred s.r.o., Prague</h4>
+                        <span class="company">Kindred s.r.o.</span>
+                        <span class="period">2021</span>
+                    </div>
+                    <div class="experience-body">
                         <p>User Acceptance Testing for multinational eshop/salesforce products.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2021</div>
-                    <div class="timeline-content">
+                <div class="experience-item">
+                    <div class="experience-header">
                         <h3>QA Engineer</h3>
-                        <h4>Collabim s.r.o., České Budějovice</h4>
+                        <span class="company">Collabim s.r.o.</span>
+                        <span class="period">2021</span>
+                    </div>
+                    <div class="experience-body">
                         <p>Automation Testing using Robot Framework, including fixing failed test cases and test execution. Sanity, smoke, user acceptance, manual, and unit testing across various environments for SEO analyzing apps.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2015 - 2020</div>
-                    <div class="timeline-content">
-                        <h3>Educator, Blockchain Evangelist</h3>
-                        <h4>Nxt Academy</h4>
-                        <p>Acted as a Blockchain Evangelist and promoted the use of cryptocurrencies and blockchain technology. Delivered keynote presentations at leading international cryptocurrency congresses.</p>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Blockchain Evangelist</h3>
+                        <span class="company">Nxt Academy</span>
+                        <span class="period">2015 - 2020</span>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2013 - 2016</div>
-                    <div class="timeline-content">
-                        <h3>Chief Marketing Officer</h3>
-                        <h4>Nxt Cryptocurrency</h4>
-                        <p>Lead and execute a comprehensive communication and brand strategy, including social media management, content creation, and public speaking as part of the founding team.</p>
+                    <div class="experience-body">
+                        <p>Acted as a Blockchain Evangelist and promoted the use of cryptocurrencies and blockchain technology. Delivered keynote presentations at leading international cryptocurrency congresses in Shanghai, Hong Kong, Vienna, Sofia, and Prague.</p>
                     </div>
                 </div>
             </div>
@@ -134,96 +129,72 @@
         <!-- Skills Section -->
         <section id="skills" class="skills">
             <div class="section-header">
-                <h2>Skills & Technologies</h2>
+                <h2>Skills & Tools</h2>
                 <div class="separator"></div>
             </div>
             <div class="skills-content">
-                <div class="skills-category">
-                    <h3>QA Automation</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Robot Framework</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Cypress</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Selenium</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
+                <div class="skills-list">
+                    <div class="skill-category">
+                        <h3>QA Automation</h3>
+                        <ul>
+                            <li>Robot Framework</li>
+                            <li>Cypress</li>
+                            <li>Selenium</li>
+                            <li>Test Case Design</li>
+                            <li>Automated Testing</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Technologies</h3>
+                        <ul>
+                            <li>Jira</li>
+                            <li>Confluence</li>
+                            <li>Git</li>
+                            <li>Docker</li>
+                            <li>CI/CD Pipelines</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Programming</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>HTML/CSS</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="skills-category">
-                    <h3>Programming</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Python</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>SQL</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>React</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
                     </div>
-                </div>
-                <div class="tech-icons">
-                    <div class="tech-icon">
+                    <div class="tool-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tool-item">
                         <i class="fab fa-git-alt"></i>
                         <span>Git</span>
                     </div>
-                    <div class="tech-icon">
+                    <div class="tool-item">
                         <i class="fab fa-docker"></i>
                         <span>Docker</span>
                     </div>
-                    <div class="tech-icon">
+                    <div class="tool-item">
                         <i class="fab fa-jira"></i>
                         <span>Jira</span>
                     </div>
-                    <div class="tech-icon">
-                        <i class="fab fa-node-js"></i>
-                        <span>Node.js</span>
+                    <div class="tool-item">
+                        <i class="fab fa-react"></i>
+                        <span>React</span>
                     </div>
-                    <div class="tech-icon">
-                        <i class="fas fa-fire"></i>
-                        <span>Firebase</span>
+                    <div class="tool-item">
+                        <i class="fas fa-database"></i>
+                        <span>SQL</span>
                     </div>
-                    <div class="tech-icon">
+                    <div class="tool-item">
                         <i class="fas fa-terminal"></i>
                         <span>Oh my Zsh</span>
                     </div>
@@ -280,13 +251,6 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Norberta Frýda 11, 37005 České Budějovice, Czechia</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
@@ -294,46 +258,48 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h3>Phone</h3>
-                            <p>+420 732339646</p>
+                            <h3>Location</h3>
+                            <p>České Budějovice, Czechia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/petr-kindlmann</p>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject">
-                    </div>
-                    <div class="form-group">
-                        <textarea rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn primary">Send Message</button>
-                </form>
+                <div class="contact-form-container">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Send</button>
+                    </form>
+                </div>
             </div>
         </section>
 
         <!-- Footer -->
         <footer>
             <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="logo">PK</div>
-                    <p>QA Engineer & Blockchain Enthusiast</p>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Petr Kindlmann. All Rights Reserved.</p>
                 </div>
                 <div class="footer-social">
                     <a href="https://linkedin.com/in/petr-kindlmann" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://stackoverflow.com" target="_blank"><i class="fab fa-stack-overflow"></i></a>
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-                <div class="footer-copyright">
-                    <p>&copy; 2025 Petr Kindlmann. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
