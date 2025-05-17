@@ -1,6 +1,19 @@
 // Main JavaScript for Petr Kindlmann's Portfolio
 
 document.addEventListener("DOMContentLoaded", function() {
+    // ========== Hero Background Image Enhancement ==========
+    const hero = document.querySelector('.hero');
+    
+    // Add subtle parallax effect to the background image
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset;
+        if (hero && scrollPosition < window.innerHeight) {
+            // Move the background at a slower rate than the scroll for parallax effect
+            const translateY = scrollPosition * 0.4;
+            hero.style.backgroundPositionY = `calc(50% + ${translateY}px)`;
+        }
+    });
+    
     // ========== Dark/Light Mode Toggle ==========
     const toggleMode = document.querySelector('.toggle-mode');
     const body = document.body;
