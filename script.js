@@ -277,11 +277,11 @@ toolItems.forEach(item => {
     
     // Add different gradient colors to projects
     const gradientColors = [
-        ['#4a72ff', '#6f8fff'],
-        ['#ff4a8d', '#ff6f9e'],
-        ['#4aff8d', '#6fff9e'],
-        ['#ff8d4a', '#ff9e6f']
-    ];
+    ['#FF9100', '#FFBB4D'], // Orange to yellow-orange
+    ['#FFBB4D', '#FFA533'], // Yellow-orange to darker orange
+    ['#FFA533', '#FF9100'], // Darker orange to orange
+    ['#FF8230', '#FFBB4D']  // Burnt orange to yellow-orange
+];
     
     projectImages.forEach((img, index) => {
         const colorIndex = index % gradientColors.length;
