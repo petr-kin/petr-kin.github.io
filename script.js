@@ -1,16 +1,16 @@
-// Dark Mode Toggle const toggleMode = document.querySelector('.toggle-mode'); const body = document.body;
+// Dark/Light Mode Toggle const toggleMode = document.querySelector('.toggle-mode'); const body = document.body;
 
-// Check for saved user preference if (localStorage.getItem('darkMode') === 'enabled') { body.classList.add('dark-mode'); toggleMode.innerHTML = '<i class="fas fa-sun"></i>'; }
+// Default is dark mode if (localStorage.getItem('lightMode') === 'enabled') { body.classList.add('light-mode'); toggleMode.innerHTML = '<i class="fas fa-moon"></i>'; }
 
-// Toggle dark/light mode toggleMode.addEventListener('click', () => { body.classList.toggle('dark-mode');
+// Toggle dark/light mode toggleMode.addEventListener('click', () => { body.classList.toggle('light-mode');
 
 // Update icon and save preference
-if (body.classList.contains('dark-mode')) {
-    toggleMode.innerHTML = '<i class="fas fa-sun"></i>';
-    localStorage.setItem('darkMode', 'enabled');
-} else {
+if (body.classList.contains('light-mode')) {
     toggleMode.innerHTML = '<i class="fas fa-moon"></i>';
-    localStorage.setItem('darkMode', 'disabled');
+    localStorage.setItem('lightMode', 'enabled');
+} else {
+    toggleMode.innerHTML = '<i class="fas fa-sun"></i>';
+    localStorage.setItem('lightMode', 'disabled');
 }
 });
 
