@@ -521,17 +521,65 @@ nav {
     align-items: center;
     text-align: center;
     gap: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.tool-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
 }
 
 .tool-item i {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .tool-item span {
     font-size: 0.9rem;
     color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.tool-item:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.tool-item:hover::before {
+    opacity: 0.05;
+}
+
+.tool-item:hover i {
+    transform: scale(1.2);
+    color: var(--gradient-start);
+}
+
+.tool-item:hover span {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Active Effect (when clicked) */
+.tool-item:active {
+    transform: translateY(-2px) scale(1.05);
 }
 
 .skills-tracker-btn {
