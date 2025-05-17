@@ -189,17 +189,17 @@ nav {
     background-image: url('https://raw.githubusercontent.com/petr-kin/petr-kin.github.io/main/355853830_10232093416978375_8519032369018198235_n.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.15;
+    opacity: 0.65;
     z-index: -1;
     filter: grayscale(40%) blur(1px);
 }
 
 .dark-theme .hero::before {
-    filter: grayscale(60%) blur(1px) brightness(0.7);
+    filter: grayscale(30%) blur(1px) brightness(0.9); /* Increased brightness from 0.7 to 0.9 */
 }
 
 .light-theme .hero::before {
-    filter: grayscale(30%) blur(1px) brightness(1.1);
+    filter: grayscale(20%) blur(1px) brightness(1.2); /* Increased brightness from 1.1 to 1.2 */
 }
 
 .hero::after {
@@ -212,9 +212,9 @@ nav {
     background: linear-gradient(
         to bottom,
         var(--background-color) 0%,
-        rgba(18, 18, 20, 0.8) 20%,
-        rgba(18, 18, 20, 0.6) 40%,
-        rgba(18, 18, 20, 0.8) 80%,
+        rgba(18, 18, 20, 0.7) 20%, /* More transparent */
+        rgba(18, 18, 20, 0.4) 40%, /* More transparent */
+        rgba(18, 18, 20, 0.7) 80%, /* More transparent */
         var(--background-color) 100%
     );
     z-index: -1;
@@ -224,9 +224,9 @@ nav {
     background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 0.8) 20%,
-        rgba(255, 255, 255, 0.6) 40%,
-        rgba(255, 255, 255, 0.8) 80%,
+        rgba(255, 255, 255, 0.7) 20%, /* More transparent */
+        rgba(255, 255, 255, 0.4) 40%, /* More transparent */
+        rgba(255, 255, 255, 0.7) 80%, /* More transparent */
         rgba(255, 255, 255, 1) 100%
     );
 }
@@ -251,7 +251,8 @@ nav {
     font-weight: 700;
     margin-bottom: 15px;
     letter-spacing: -0.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    color: var(--text-color); /* Ensure good contrast */
 }
 
 .tagline {
