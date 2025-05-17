@@ -1,0 +1,140 @@
+/* Yellow-Orange Color Scheme Update */
+
+/* Update the root color variables in your CSS */
+:root {
+    --primary-color: #FF9100; /* Orange primary color */
+    --primary-light: #FFB347; /* Lighter orange */
+    --secondary-color: #202022; /* Keep dark secondary */
+    --text-color: #f5f5f5; /* Keep light text */
+    --text-light: #a0a0a0; /* Keep light gray text */
+    --background-color: #121214; /* Keep dark background */
+    --card-background: #202022; /* Keep dark card background */
+    --border-color: #2a2a2c; /* Keep border color */
+    --shadow-color: rgba(0, 0, 0, 0.2); /* Keep shadow */
+    --gradient-start: #FF9100; /* Orange gradient start */
+    --gradient-end: #FFBB4D; /* Yellow-orange gradient end */
+    --transition: all 0.3s ease;
+}
+
+/* Light mode colors */
+.light-mode {
+    --primary-color: #FF9100; /* Orange primary color */
+    --primary-light: #FFB347; /* Lighter orange */
+    --secondary-color: #f7f7f7; /* Keep light secondary */
+    --text-color: #333; /* Keep dark text */
+    --text-light: #777; /* Keep gray text */
+    --background-color: #fff; /* Keep white background */
+    --card-background: #fff; /* Keep white card background */
+    --border-color: #eaeaea; /* Keep light border */
+    --shadow-color: rgba(0, 0, 0, 0.05); /* Keep light shadow */
+}
+
+/* Update status indicator */
+.status {
+    color: var(--primary-color);
+}
+
+/* Update buttons */
+.btn.primary {
+    background-color: var(--primary-color);
+}
+
+.btn.primary:hover {
+    background-color: var(--primary-light);
+}
+
+/* Update separator line */
+.separator {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+/* Update dots before list items */
+.traits ul li:before,
+.experience-achievements li:before,
+.skill-category ul li:before,
+.modal-description li:before {
+    background-color: var(--primary-color);
+}
+
+/* Update company name color */
+.company {
+    color: var(--primary-color);
+}
+
+/* Update social link hover */
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Update tool icons */
+.tool-item i {
+    color: var(--primary-color);
+}
+
+.tool-item:hover i {
+    color: var(--gradient-start);
+}
+
+/* Update skill progress bars */
+.skill-progress {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+.proficiency {
+    color: var(--primary-color);
+}
+
+/* Update project placeholders */
+.project-placeholder {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+}
+
+/* Update contact item icons */
+.contact-item i {
+    color: var(--primary-color);
+}
+
+/* Update footer social icons */
+.footer-social a:hover {
+    color: var(--primary-color);
+}
+
+/* Update back to top button */
+.back-to-top-btn {
+    background-color: var(--primary-color);
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--primary-light);
+}
+
+/* Update active navigation link */
+.nav-links a.active-link {
+    color: var(--primary-color);
+}
+
+/* Update tagline color */
+.tagline {
+    color: var(--primary-color);
+    border-right-color: var(--primary-color);
+}
+
+@keyframes blinkCursor {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--primary-color); }
+}
+
+/* Update popup heading */
+.popup-content h4 {
+    color: var(--primary-color);
+}
+
+/* Update project button gradient hover */
+.project-gradient-hover:before {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+}
+
+/* Update skills tracker modal */
+.progress-marker.in-progress {
+    background-color: var(--primary-color);
+}
