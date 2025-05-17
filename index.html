@@ -3,183 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petr Kindlmann - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Petr Kindlmann | QA Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="hero">
-        <h1>Welcome, I'm Petr Kindlmann</h1>
-        <div class="social-icons">
-            <a href="https://github.com"><i class="fab fa-github"></i></a>
-            <a href="https://stackoverflow.com"><i class="fab fa-stack-overflow"></i></a>
-            <a href="https://linkedin.com/in/petr-kindlmann"><i class="fab fa-linkedin"></i></a>
-            <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
-        </div>
-        <div class="buttons">
-            <a href="CV_Petr_Kindlmann.pdf" class="btn resume-btn">Download Resume <i class="fas fa-download"></i></a>
-            <a href="mailto:thepetr@gmail.com" class="btn contact-btn">Get in Touch</a>
-        </div>
-        <div class="scroll-down">
-            <a href="#about">
-            <i class="fas fa-chevron-down"></i>
-                </a>
-            </div>        
-        </div>
-    </section>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">PK</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="toggle-mode">
+                <i class="fas fa-moon"></i>
+            </div>
+        </nav>
 
-    <section class="about" id="about">
-        <div class="about-content">
-            <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>I'm Petr Kindlmann, a QA Engineer with expertise in automation, blockchain evangelism, and tech leadership.</p>
-                <p><strong>Interests:</strong> Blockchain, QA Automation, Photography, and Dancing</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="skills">
-        <h1>Skills</h1>
-        <div class="skills-grid">
-            <div class="category">
-                <h3>QA Tools</h3>
-                <div class="skill">
-                    <span>Robot Framework</span>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>Cypress</span>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>Selenium</span>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 85%;"></div>
-                    </div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hello, I'm <span>Petr Kindlmann</span></h1>
+                <h2>QA Engineer & Blockchain Enthusiast</h2>
+                <p>Specializing in test automation and quality assurance with a background in blockchain technology</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn primary">Get in Touch</a>
+                    <a href="CV_Petr_Kindlmann.pdf" class="btn secondary" download>Download CV</a>
                 </div>
             </div>
-            <div class="category">
-                <h3>Languages</h3>
-                <div class="skill">
-                    <span>Python</span>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>SQL</span>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
-                </div>
+            <div class="hero-image">
+                <div class="profile-circle"></div>
             </div>
-            <div class="category">
-                <h3>Tech</h3>
-                <div class="skill">
-                    <span>Docker</span>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>React</span>
-                    <div class="skill-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="technologies">
-        <h1>Technologies</h1>
-        <div class="technologies-grid">
-            <div class="skill-item">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg" alt="Git">
-                <p>Git</p>
-            </div>
-            <div class="skill-item">
-                <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman Icon">
-                <p>Postman</p>
-            </div>
-            <div class="skill-item">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="NodeJS Icon">
-                <p>NodeJS</p>
-            </div>
-            <div class="skill-item">
-                <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="Firebase Icon">
-                <p>Firebase</p>
-            </div>
-        </div>
-           </section>
-    <section class="courses" id="courses">
-        <h1>Courses I've Taken</h1>
-            <div class="courses-grid">
-                <div class="course-item">
-                    <h3>Introduction to Python</h3>
-                    <p>Completed on Coursera</p>
-                </div>
-                <div class="course-item">
-                    <h3>Automation with Selenium</h3>
-                    <p>Completed on Udemy</p>
-                </div>
-                <div class="course-item">
-                    <h3>React for Beginners</h3>
-                    <p>Completed on Codecademy</p>
-                </div>
-                 <div class="course-item">
-                    <h3>React for Beginners</h3>
-                    <p>Completed on Codecademy</p>
-                </div>
         </section>
-        <script>
-            fetch('content.json')
-              .then(response => response.json())
-              .then(data => {
-                // Hero Section
-                document.querySelector('.hero h1').innerText = data.hero.title;
-                document.querySelector('.btn.resume-btn').innerText = data.hero.resumeButton;
-                document.querySelector('.btn.contact-btn').innerText = data.hero.contactButton;
-          
-                // Social Links
-                document.querySelector('.social-icons a[href*="github"]').href = data.social.github;
-                document.querySelector('.social-icons a[href*="stackoverflow"]').href = data.social.stackoverflow;
-                document.querySelector('.social-icons a[href*="linkedin"]').href = data.social.linkedin;
-                document.querySelector('.social-icons a[href*="instagram"]').href = data.social.instagram;
-          
-                // About Section
-                document.querySelector('.about h2').innerText = data.about.title;
-                document.querySelector('.about p').innerText = data.about.description;
-          
-                // Skills Section
-                document.querySelector('.skills h1').innerText = data.skills.sectionTitle;
-                const qaTools = data.skills.qaTools.skills;
-                document.querySelector('.category h3').innerText = data.skills.qaTools.title;
-                qaTools.forEach((tool, index) => {
-                  document.querySelectorAll('.skill span')[index].innerText = tool.name;
-                  document.querySelectorAll('.progress')[index].style.width = tool.progress;
-                });
-          
-                // Technologies Section
-                document.querySelector('.technologies h1').innerText = data.technologies.title;
-                const techItems = data.technologies.techList;
-                techItems.forEach((tech, index) => {
-                  document.querySelectorAll('.skill-item img')[index].src = tech.img;
-                  document.querySelectorAll('.skill-item p')[index].innerText = tech.name;
-                });
-          
-                // Courses Section
-                document.querySelector('.courses h1').innerText = data.courses.title;
-                const courses = data.courses.courseList;
-                courses.forEach((course, index) => {
-                  document.querySelectorAll('.course-item h3')[index].innerText = course.name;
-                  document.querySelectorAll('.course-item p')[index].innerText = `Completed on ${course.platform}`;
-                });
-              });
-          </script>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a QA Engineer with extensive experience in automation testing, blockchain technology, and technical leadership. With a background spanning from QA engineering to blockchain evangelism, I bring a unique perspective to quality assurance in tech products.</p>
+                    <p>Currently based in Prague, Czech Republic, I focus on creating robust test automation frameworks and ensuring product quality across web and mobile platforms.</p>
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>České Budějovice, Czechia</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>thepetr@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-language"></i>
+                            <span>Czech (native), English (C1), German (B1), Chinese (A1)</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/petr-kindlmann" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://stackoverflow.com" target="_blank"><i class="fab fa-stack-overflow"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2022 - Present</div>
+                    <div class="timeline-content">
+                        <h3>QA Engineer</h3>
+                        <h4>Devcity, Prague</h4>
+                        <p>Test case creation and management for CMS and video platform products. Perform regression, manual, smoke, compatibility, and UI testing using Jira, Confluence.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-content">
+                        <h3>QA Engineer</h3>
+                        <h4>Kindred s.r.o., Prague</h4>
+                        <p>User Acceptance Testing for multinational eshop/salesforce products.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-content">
+                        <h3>QA Engineer</h3>
+                        <h4>Collabim s.r.o., České Budějovice</h4>
+                        <p>Automation Testing using Robot Framework, including fixing failed test cases and test execution. Sanity, smoke, user acceptance, manual, and unit testing across various environments for SEO analyzing apps.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2015 - 2020</div>
+                    <div class="timeline-content">
+                        <h3>Educator, Blockchain Evangelist</h3>
+                        <h4>Nxt Academy</h4>
+                        <p>Acted as a Blockchain Evangelist and promoted the use of cryptocurrencies and blockchain technology. Delivered keynote presentations at leading international cryptocurrency congresses.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2013 - 2016</div>
+                    <div class="timeline-content">
+                        <h3>Chief Marketing Officer</h3>
+                        <h4>Nxt Cryptocurrency</h4>
+                        <p>Lead and execute a comprehensive communication and brand strategy, including social media management, content creation, and public speaking as part of the founding team.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="section-header">
+                <h2>Skills & Technologies</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3>QA Automation</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Robot Framework</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Cypress</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Selenium</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Programming</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>SQL</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>React</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-docker"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-jira"></i>
+                        <span>Jira</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-node-js"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-fire"></i>
+                        <span>Firebase</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-terminal"></i>
+                        <span>Oh my Zsh</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-img">
+                        <div class="project-placeholder"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Automation Framework</h3>
+                        <p>Custom test automation framework built with Robot Framework for web applications</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Robot Framework</span>
+                            <span>Selenium</span>
+                        </div>
+                        <a href="#" class="btn project-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <div class="project-placeholder"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Blockchain Education Platform</h3>
+                        <p>Educational resources and materials for blockchain technology learning</p>
+                        <div class="project-tags">
+                            <span>Blockchain</span>
+                            <span>Education</span>
+                            <span>Web Development</span>
+                        </div>
+                        <a href="#" class="btn project-btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="separator"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Norberta Frýda 11, 37005 České Budějovice, Czechia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>thepetr@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+420 732339646</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">PK</div>
+                    <p>QA Engineer & Blockchain Enthusiast</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/petr-kindlmann" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://stackoverflow.com" target="_blank"><i class="fab fa-stack-overflow"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Petr Kindlmann. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
