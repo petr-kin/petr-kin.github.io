@@ -54,6 +54,79 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }, 50);
     }
+// Make tool items show more info when clicked
+const toolItems = document.querySelectorAll('.tool-item');
+    
+toolItems.forEach(item => {
+    const skillName = item.querySelector('span').textContent;
+    
+    item.addEventListener('click', () => {
+        // Create a small popup with skill info
+        const infoPopup = document.createElement('div');
+        infoPopup.className = 'skill-info-popup';
+        
+        // Customize content based on the skill
+        let skillInfo = '';
+        switch(skillName.toLowerCase()) {
+            case 'python':
+                skillInfo = 'Used for test automation with Robot Framework and custom test scripts';
+                break;
+            case 'javascript':
+                skillInfo = 'Frontend testing and automation with Jest, Cypress, and Puppeteer';
+                break;
+            case 'git':
+                skillInfo = 'Version control for test scripts and collaboration with development teams';
+                break;
+            case 'docker':
+                skillInfo = 'Creating isolated test environments and containerized test infrastructure';
+                break;
+            case 'jira':
+                skillInfo = 'Test case management, defect tracking, and agile workflow integration';
+                break;
+            case 'react':
+                skillInfo = 'Component testing and frontend test automation for React applications';
+                break;
+            case 'sql':
+                skillInfo = 'Database testing, data validation, and test data management';
+                break;
+            case 'security':
+                skillInfo = 'OWASP testing methodology, vulnerability assessment, and penetration testing';
+                break;
+            default:
+                skillInfo = 'Click to see more information about this skill';
+        }
+        
+        infoPopup.innerHTML = `
+            <div class="popup-content">
+                <h4>${skillName}</h4>
+                <p>${skillInfo}</p>
+            </div>
+        `;
+        
+        // Position the popup
+        document.body.appendChild(infoPopup);
+        const rect = item.getBoundingClientRect();
+        infoPopup.style.top = `${rect.bottom + window.scrollY + 10}px`;
+        infoPopup.style.left = `${rect.left + window.scrollX - 50}px`;
+        
+        // Show the popup
+        setTimeout(() => {
+            infoPopup.classList.add('show-popup');
+        }, 10);
+        
+        // Close popup when clicking elsewhere
+        document.addEventListener('click', function closePopup(e) {
+            if (!infoPopup.contains(e.target) && e.target !== item) {
+                infoPopup.classList.remove('show-popup');
+                setTimeout(() => {
+                    document.body.removeChild(infoPopup);
+                }, 300);
+                document.removeEventListener('click', closePopup);
+            }
+        });
+    });
+});
+    
 
     // ========== Interactive Experience Timeline ==========
     const experienceItems = document.querySelectorAll('.experience-item');
