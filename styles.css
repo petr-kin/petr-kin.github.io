@@ -195,11 +195,11 @@ nav {
 }
 
 .dark-theme .hero::before {
-    filter: grayscale(30%) blur(1px) brightness(0.9); /* Increased brightness from 0.7 to 0.9 */
+    filter: grayscale(30%) blur(1px) brightness(0.9);
 }
 
 .light-theme .hero::before {
-    filter: grayscale(20%) blur(1px) brightness(1.2); /* Increased brightness from 1.1 to 1.2 */
+    filter: grayscale(20%) blur(1px) brightness(1.2);
 }
 
 .hero::after {
@@ -212,9 +212,9 @@ nav {
     background: linear-gradient(
         to bottom,
         var(--background-color) 0%,
-        rgba(18, 18, 20, 0.7) 20%, /* More transparent */
-        rgba(18, 18, 20, 0.4) 40%, /* More transparent */
-        rgba(18, 18, 20, 0.7) 80%, /* More transparent */
+        rgba(18, 18, 20, 0.7) 20%,
+        rgba(18, 18, 20, 0.4) 40%,
+        rgba(18, 18, 20, 0.7) 80%,
         var(--background-color) 100%
     );
     z-index: -1;
@@ -224,9 +224,9 @@ nav {
     background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 0.7) 20%, /* More transparent */
-        rgba(255, 255, 255, 0.4) 40%, /* More transparent */
-        rgba(255, 255, 255, 0.7) 80%, /* More transparent */
+        rgba(255, 255, 255, 0.7) 20%,
+        rgba(255, 255, 255, 0.4) 40%,
+        rgba(255, 255, 255, 0.7) 80%,
         rgba(255, 255, 255, 1) 100%
     );
 }
@@ -264,7 +264,7 @@ nav {
     border-right: 2px solid var(--primary-color);
     padding-right: 5px;
     animation: blinkCursor 0.8s step-end infinite;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Add this line */
 }
 
 @keyframes blinkCursor {
@@ -280,6 +280,7 @@ nav {
     color: var(--text-light);
     margin-bottom: 8px;
     font-size: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .hero-buttons {
@@ -1134,7 +1135,8 @@ body.light-mode, body.dark-theme {
 }
 
 .hero::before, .hero::after {
-    transition: filter 0.5s ease, background 0.5s ease;
+    transition: filter 0.5s ease, background 0.5s ease, opacity 0.5s ease;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
 }
 
 /* Add parallax effect to the background for more depth */
