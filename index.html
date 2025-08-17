@@ -4,328 +4,1346 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petr Kindlmann | QA Automation Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="color-theme.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4ade80;
+            --secondary: #a78bfa;
+            --accent: #60a5fa;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f1f5f9;
+            --slate: #94a3b8;
+            --light-slate: #cbd5e1;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--darker);
+            color: var(--slate);
+            overflow-x: hidden;
+            line-height: 1.6;
+            cursor: crosshair;
+        }
+
+        /* Animated Background */
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(ellipse at center, #0f172a 0%, #020617 100%);
+        }
+
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.15;
+            animation: float 30s infinite ease-in-out;
+        }
+
+        .orb1 {
+            width: 600px;
+            height: 600px;
+            background: #4ade80;
+            top: -200px;
+            left: -200px;
+            animation-duration: 35s;
+        }
+
+        .orb2 {
+            width: 500px;
+            height: 500px;
+            background: #a78bfa;
+            bottom: -200px;
+            right: -200px;
+            animation-duration: 40s;
+            animation-delay: -10s;
+        }
+
+        .orb3 {
+            width: 400px;
+            height: 400px;
+            background: #60a5fa;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-duration: 45s;
+            animation-delay: -20s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg); 
+            }
+            33% { 
+                transform: translate(100px, -50px) rotate(120deg); 
+            }
+            66% { 
+                transform: translate(-50px, 100px) rotate(240deg); 
+            }
+        }
+
+        /* Starfield */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 4s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light-slate);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 3rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text .greeting {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            color: var(--light);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text .subtitle {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--slate);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-text p {
+            max-width: 500px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: var(--slate);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--darker);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(74, 222, 128, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(74, 222, 128, 0.4);
+        }
+
+        /* Tech Constellation Animation */
+        .constellation-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: rgba(15, 23, 42, 0.3);
+            border: 2px solid rgba(74, 222, 128, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .constellation-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .tech-node {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 2;
+        }
+
+        .tech-node:hover {
+            transform: scale(1.1);
+        }
+
+        .node-dot {
+            width: 14px;
+            height: 14px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--primary);
+            position: relative;
+        }
+
+        .node-dot::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 25px;
+            height: 25px;
+            border: 1px solid var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .node-label {
+            font-size: 0.8rem;
+            color: var(--light-slate);
+            font-weight: 500;
+        }
+
+        .connection-line {
+            stroke: var(--primary);
+            stroke-width: 0.5;
+            opacity: 0.2;
+            stroke-dasharray: 5, 5;
+        }
+
+        .laser-beam {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), var(--primary), transparent);
+            transform-origin: left center;
+            animation: laser-fade 0.5s ease-out forwards;
+            z-index: 10;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        @keyframes laser-fade {
+            0% {
+                opacity: 1;
+                filter: brightness(2);
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .node-explosion {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            animation: explode 0.6s ease-out forwards;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        .lightning-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .lightning-bolt {
+            stroke: #fff;
+            stroke-width: 3;
+            fill: none;
+            filter: drop-shadow(0 0 10px var(--accent)) drop-shadow(0 0 20px var(--primary));
+            animation: lightning-strike 0.3s ease-out forwards;
+        }
+
+        @keyframes lightning-strike {
+            0% {
+                opacity: 0;
+                stroke-width: 1;
+            }
+            50% {
+                opacity: 1;
+                stroke-width: 5;
+            }
+            100% {
+                opacity: 0;
+                stroke-width: 2;
+            }
+        }
+
+        .final-explosion {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, var(--primary) 30%, var(--accent) 60%, transparent 100%);
+            animation: final-boom 1.5s ease-out forwards;
+            pointer-events: none;
+            z-index: 30;
+        }
+
+        @keyframes final-boom {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 8rem 3rem;
+            background: linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--slate);
+            font-size: 1.2rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .skills-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: translateX(-100%);
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(74, 222, 128, 0.2);
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-title {
+            font-size: 1.4rem;
+            color: var(--light);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .skill-description {
+            color: var(--slate);
+            line-height: 1.7;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            padding: 0.4rem 1rem;
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            border-radius: 20px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            background: rgba(74, 222, 128, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 8rem 3rem;
+            background: var(--darker);
+        }
+
+        .project-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(74, 222, 128, 0.3);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(96, 165, 250, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(74, 222, 128, 0.2));
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .project-image::after {
+            transform: translateX(0);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .project-description {
+            color: var(--slate);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            padding: 0.3rem 0.8rem;
+            background: rgba(167, 139, 250, 0.1);
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-radius: 12px;
+            color: var(--secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            padding: 0.5rem 1rem;
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            border-radius: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            background: rgba(74, 222, 128, 0.2);
+            transform: translateX(3px);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 3rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--dark) 0%, var(--darker) 100%);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .contact-subtitle {
+            color: var(--slate);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 1.25rem 3rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--darker);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(74, 222, 128, 0.3);
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(74, 222, 128, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem;
+            text-align: center;
+            background: var(--darker);
+            border-top: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: rgba(74, 222, 128, 0.2);
+            transform: translateY(-5px) rotate(5deg);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .game-container {
+                height: 300px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body class="dark-theme">
-    <div class="container">
-        <!-- Navigation -->
+<body>
+    <!-- Background -->
+    <div class="bg-container">
+        <div class="floating-orb orb1"></div>
+        <div class="floating-orb orb2"></div>
+        <div class="floating-orb orb3"></div>
+    </div>
+    <div class="stars" id="stars"></div>
+
+    <!-- Navigation -->
+    <header>
         <nav>
             <div class="logo">PK</div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="toggle-mode">
-                <i class="fas fa-sun"></i>
-            </div>
         </nav>
+    </header>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="status">Available for new opportunities</div>
-                <h1>Bug Annihilator, QA Automation Enthusiast</h1>
-                <p class="tagline">Finding defects others miss & automating to prevent future issues</p>
-                <div class="contact-info">
-                    <p>thepetr@gmail.com</p>
-                    <p>linkedin.com/in/petr-kindlmann</p>
-                    <p>České Budějovice, Czechia</p>
-                </div>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn primary">Let's Talk Quality</a>
-                    <a href="CV_Petr_Kindlmann.pdf" class="btn secondary" download>Download CV</a>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="greeting">QA Automation Engineer</p>
+                <h1>Petr Kindlmann</h1>
+                <p class="subtitle">Test automation architect</p>
+                <p>
+                    Builds test automation frameworks using Robot Framework, Playwright, and Cypress. 
+                    Reduces regression testing time through automation integration and 
+                    systematic defect detection methodologies.
+                </p>
+                <a href="#contact" class="cta-button">Contact</a>
             </div>
-        </section>
+            <div class="constellation-container" id="constellationContainer">
+                <svg class="constellation-lines" id="connectionLines"></svg>
+                <div class="lightning-container" id="lightningContainer"></div>
+            </div>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="section-header">
-                <h2>My Quality Commitment</h2>
-                <div class="separator"></div>
-            </div>
-            <div class="about-content">
-                <div class="traits">
-                    <ul>
-                        <li>Methodical problem-solver with an investigative mind</li>
-                        <li>Automation advocate who values efficiency</li>
-                        <li>Security-conscious tester who thinks like both user and attacker</li>
-                        <li>Continuous learner mastering new technologies</li>
-                    </ul>
-                </div>
-                <div class="about-text">
-                    <p>I transform complex quality challenges into actionable solutions through strategic testing approaches and automation. At Devcity, I've refined my skills in comprehensive QA methodologies while developing a passion for test automation and security testing. I believe great software isn't just about features—it's about reliability, security, and exceptional user experience.</p>
-                    <p><em>"If it can be broken, I'll find how—then make sure it never breaks that way again."</em></p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/petr-kindlmann" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://stackoverflow.com" target="_blank"><i class="fab fa-stack-overflow"></i></a>
-                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="section-header">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">QA automation specialization since 2020</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3 class="skill-title">Test Automation</h3>
+                <p class="skill-description">
+                    Implements test automation frameworks using Robot Framework, Playwright, and Cypress. 
+                    Reduces manual testing effort through systematic automation deployment.
+                </p>
+                <div class="skill-tags">
+                    <span class="tag">Robot Framework</span>
+                    <span class="tag">Playwright</span>
+                    <span class="tag">Cypress</span>
                 </div>
             </div>
-        </section>
+            <div class="skill-card">
+                <h3 class="skill-title">CI/CD Integration</h3>
+                <p class="skill-description">
+                    Integrates automated tests into deployment pipelines. 
+                    Configures test execution triggers and failure notification systems.
+                </p>
+                <div class="skill-tags">
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">GitHub Actions</span>
+                    <span class="tag">Docker</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3 class="skill-title">Security Testing</h3>
+                <p class="skill-description">
+                    Identifies security vulnerabilities using OWASP testing methodology. 
+                    Validates authentication mechanisms and session management.
+                </p>
+                <div class="skill-tags">
+                    <span class="tag">OWASP ZAP</span>
+                    <span class="tag">Burp Suite</span>
+                    <span class="tag">Security Scanning</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3 class="skill-title">API Testing</h3>
+                <p class="skill-description">
+                    Tests REST and GraphQL APIs for functional and performance requirements. 
+                    Validates data contracts and response schemas.
+                </p>
+                <div class="skill-tags">
+                    <span class="tag">Postman</span>
+                    <span class="tag">REST Assured</span>
+                    <span class="tag">API Validation</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3 class="skill-title">Test Strategy</h3>
+                <p class="skill-description">
+                    Develops risk-based testing approaches for CMS and video platforms. 
+                    Implements defect lifecycle management and quality metrics tracking.
+                </p>
+                <div class="skill-tags">
+                    <span class="tag">Test Planning</span>
+                    <span class="tag">Risk Analysis</span>
+                    <span class="tag">Metrics</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3 class="skill-title">Programming</h3>
+                <p class="skill-description">
+                    Writes test automation code in Python and JavaScript. 
+                    Maintains test frameworks and debugging automation failures.
+                </p>
+                <div class="skill-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">TypeScript</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="experience">
-            <div class="section-header">
-                <h2>Work Experience</h2>
-                <div class="separator"></div>
-            </div>
-            <div class="timeline">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>QA Engineer</h3>
-                        <span class="company">Devcity</span>
-                        <span class="period">2022 - Present</span>
+    <!-- Experience Section -->
+    <section class="experience" id="experience" style="padding: 8rem 3rem; background: linear-gradient(180deg, var(--dark) 0%, var(--darker) 50%, var(--dark) 100%);">
+        <div class="section-header">
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-subtitle">QA automation and testing roles</p>
+        </div>
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <div>
+                        <h3 style="color: var(--light); font-size: 1.4rem; margin-bottom: 0.5rem;">QA Engineer</h3>
+                        <p style="color: var(--primary); font-weight: 600;">Devcity</p>
                     </div>
-                    <div class="experience-body">
-                        <p>Orchestrating comprehensive quality strategies for CMS and video platform products through strategic test planning, execution, and continuous improvement of testing processes.</p>
-                        <ul class="experience-achievements">
-                            <li>Implemented automated test suites that reduced regression testing time by 40%</li>
-                            <li>Established comprehensive test documentation standards improving team productivity</li>
-                            <li>Identified critical security vulnerabilities through exploratory testing techniques</li>
-                            <li>Collaborated with developers to implement test-driven development practices</li>
-                        </ul>
-                    </div>
+                    <span style="color: var(--slate); font-size: 0.9rem;">2022 - Present</span>
                 </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>QA Engineer</h3>
-                        <span class="company">Kindred s.r.o.</span>
-                        <span class="period">2021</span>
-                    </div>
-                    <div class="experience-body">
-                        <p>Led User Acceptance Testing initiatives for multinational e-commerce platforms, ensuring seamless customer experiences across diverse markets and user personas.</p>
-                        <ul class="experience-achievements">
-                            <li>Conducted thorough acceptance testing across various languages and regions</li>
-                            <li>Developed comprehensive test scenarios modeling complex user journeys</li>
-                            <li>Identified localization issues that would have impacted international markets</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>QA Engineer</h3>
-                        <span class="company">Collabim s.r.o.</span>
-                        <span class="period">2021</span>
-                    </div>
-                    <div class="experience-body">
-                        <p>Implemented and enhanced automation testing infrastructure using Robot Framework for SEO analysis applications, significantly improving testing efficiency and coverage.</p>
-                        <ul class="experience-achievements">
-                            <li>Developed robust automated test suites with Robot Framework</li>
-                            <li>Executed comprehensive test strategies across multiple environments</li>
-                            <li>Reduced manual testing effort by 30% through strategic automation</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3>Blockchain Evangelist</h3>
-                        <span class="company">Nxt Academy</span>
-                        <span class="period">2015 - 2020</span>
-                    </div>
-                    <div class="experience-body">
-                        <p>Advocated for blockchain adoption while developing a keen understanding of secure system architecture and transaction validation—skills that now inform my approach to testing critical systems.</p>
-                        <ul class="experience-achievements">
-                            <li>Delivered keynote presentations at international cryptocurrency conferences</li>
-                            <li>Developed educational materials about blockchain security principles</li>
-                            <li>Analyzed security vulnerabilities in distributed ledger technologies</li>
-                        </ul>
-                    </div>
+                <p style="color: var(--slate); line-height: 1.7; margin-bottom: 1rem;">
+                    Implements test automation frameworks for CMS and video platform products. 
+                    Reduced regression testing time by 40% through systematic automation deployment.
+                </p>
+                <div style="margin-left: 1rem;">
+                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Automated test suite implementation</p>
+                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Test documentation standardization</p>
+                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Security vulnerability identification</p>
+                    <p style="color: var(--light-slate);">• Test-driven development collaboration</p>
                 </div>
             </div>
-        </section>
+            
+            <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <div>
+                        <h3 style="color: var(--light); font-size: 1.4rem; margin-bottom: 0.5rem;">QA Engineer</h3>
+                        <p style="color: var(--primary); font-weight: 600;">Collabim s.r.o.</p>
+                    </div>
+                    <span style="color: var(--slate); font-size: 0.9rem;">2021</span>
+                </div>
+                <p style="color: var(--slate); line-height: 1.7; margin-bottom: 1rem;">
+                    Implemented Robot Framework automation for SEO analysis applications. 
+                    Reduced manual testing effort by 30% through strategic test automation.
+                </p>
+                <div style="margin-left: 1rem;">
+                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Robot Framework test development</p>
+                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Multi-environment test execution</p>
+                    <p style="color: var(--light-slate);">• Test automation strategy implementation</p>
+                </div>
+            </div>
+            
+            <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 16px; padding: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <div>
+                        <h3 style="color: var(--light); font-size: 1.4rem; margin-bottom: 0.5rem;">QA Engineer</h3>
+                        <p style="color: var(--primary); font-weight: 600;">Kindred s.r.o.</p>
+                    </div>
+                    <span style="color: var(--slate); font-size: 0.9rem;">2021</span>
+                </div>
+                <p style="color: var(--slate); line-height: 1.7; margin-bottom: 1rem;">
+                    User acceptance testing for multinational e-commerce platforms. 
+                    Validated functionality across multiple languages and regional markets.
+                </p>
+                <div style="margin-left: 1rem;">
+                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Acceptance testing execution</p>
+                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• User journey scenario development</p>
+                    <p style="color: var(--light-slate);">• Localization issue identification</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <div class="section-header">
-                <h2>Skills & Tools</h2>
-                <div class="separator"></div>
-            </div>
-            <div class="skills-content">
-                <div class="skills-list">
-                    <div class="skill-category">
-                        <h3>QA Foundations</h3>
-                        <ul>
-                            <li>Test Strategy Development</li>
-                            <li>Defect Lifecycle Management</li>
-                            <li>Risk-Based Testing</li>
-                            <li>Quality Metrics & Reporting</li>
-                            <li>User Story Analysis</li>
-                        </ul>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-header">
+            <h2 class="section-title">QA Automation Tools</h2>
+            <p class="section-subtitle">Production testing frameworks and analysis tools</p>
+        </div>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3 class="project-title">Playwright Test Doctor</h3>
+                    <p class="project-description">
+                        AI-powered Playwright test healing system. Detects failing selectors and 
+                        generates replacement strategies. Reduces test maintenance by 60%.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">Playwright</span>
+                        <span class="tech-badge">AI Integration</span>
                     </div>
-                    <div class="skill-category">
-                        <h3>Test Automation</h3>
-                        <ul>
-                            <li>Robot Framework</li>
-                            <li>Cypress</li>
-                            <li>Selenium</li>
-                            <li>API Testing</li>
-                            <li>CI/CD Test Integration</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Security Testing</h3>
-                        <ul>
-                            <li>OWASP Testing Methodology</li>
-                            <li>Vulnerability Assessment</li>
-                            <li>Authentication Testing</li>
-                            <li>Session Management Testing</li>
-                            <li>API Security Testing</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tools-grid">
-                    <div class="tool-item">
-                        <i class="fab fa-python"></i>
-                        <span>Python</span>
-                    </div>
-                    <div class="tool-item">
-                        <i class="fab fa-js"></i>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="tool-item">
-                        <i class="fab fa-git-alt"></i>
-                        <span>Git</span>
-                    </div>
-                    <div class="tool-item">
-                        <i class="fab fa-docker"></i>
-                        <span>Docker</span>
-                    </div>
-                    <div class="tool-item">
-                        <i class="fab fa-jira"></i>
-                        <span>Jira</span>
-                    </div>
-                    <div class="tool-item">
-                        <i class="fab fa-react"></i>
-                        <span>React</span>
-                    </div>
-                    <div class="tool-item">
-                        <i class="fas fa-database"></i>
-                        <span>SQL</span>
-                    </div>
-                    <div class="tool-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Security</span>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Documentation</a>
+                        <a href="#" class="project-link">Status: PASS</a>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3 class="project-title">QA Intelligence Suite</h3>
+                    <p class="project-description">
+                        20-analyzer testing platform for repository health, test coverage, 
+                        performance bottlenecks, and migration risk assessment.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">Test Analysis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Architecture</a>
+                        <a href="#" class="project-link">Count: 20/20 operational</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3 class="project-title">Test Strategy Optimizer</h3>
+                    <p class="project-description">
+                        4-pillar testing framework with health monitoring, intelligence analysis, 
+                        strategy optimization, and automated training modules.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">Test Orchestration</span>
+                        <span class="tech-badge">Training System</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Framework</a>
+                        <a href="#" class="project-link">Status: operational</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="section-header">
-                <h2>Projects</h2>
-                <div class="separator"></div>
-            </div>
-            <div class="projects-container">
-                <div class="project-card">
-                    <div class="project-img">
-                        <div class="project-placeholder"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Automation Framework Architect</h3>
-                        <p>Developed a comprehensive test automation framework using Robot Framework that reduced regression testing time by 60% while improving test coverage.</p>
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Robot Framework</span>
-                            <span>Selenium</span>
-                            <span>Jenkins</span>
-                        </div>
-                        <a href="#" class="btn project-btn">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <div class="project-placeholder"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Security Testing Toolkit</h3>
-                        <p>Created a specialized toolkit for identifying common security vulnerabilities in web applications, focusing on OWASP Top 10 risks.</p>
-                        <div class="project-tags">
-                            <span>Security</span>
-                            <span>Python</span>
-                            <span>Web Testing</span>
-                            <span>OWASP</span>
-                        </div>
-                        <a href="#" class="btn project-btn">View Project</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2 class="contact-title">Contact Information</h2>
+            <p class="contact-subtitle">
+                QA automation engineer based in České Budějovice, Czechia. 
+                Available for test automation projects and quality assurance consulting.
+            </p>
+            <a href="mailto:thepetr@gmail.com" class="contact-button">thepetr@gmail.com</a>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <div class="separator"></div>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>thepetr@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>České Budějovice, Czechia</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <div>
-                            <h3>LinkedIn</h3>
-                            <p>linkedin.com/in/petr-kindlmann</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-container">
-                    <h3>Send a Message</h3>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea rows="5" placeholder="Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary">Send</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#" class="social-link">GH</a>
+            <a href="#" class="social-link">LI</a>
+            <a href="#" class="social-link">TW</a>
+            <a href="#" class="social-link">CV</a>
+        </div>
+        <p style="color: var(--slate);">© 2025 Petr Kindlmann. QA Engineer.</p>
+    </footer>
 
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-copyright">
-                    <p>&copy; 2025 Petr Kindlmann. All Rights Reserved.</p>
-                    <p>Test Everything. Automate What Matters. Secure What's Valuable.</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://linkedin.com/in/petr-kindlmann" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://stackoverflow.com" target="_blank"><i class="fab fa-stack-overflow"></i></a>
-                </div>
-            </div>
-        </footer>
-    </div>
+    <script>
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 4}s`;
+            starsContainer.appendChild(star);
+        }
 
-    <script src="script.js"></script>
+        // Tech Constellation Animation
+        const constellationContainer = document.getElementById('constellationContainer');
+        const connectionLines = document.getElementById('connectionLines');
+        const lightningContainer = document.getElementById('lightningContainer');
+        
+        // Tech nodes data
+        const techNodes = [
+            { name: 'Playwright', x: 50, y: 20 },
+            { name: 'TypeScript', x: 20, y: 30 },
+            { name: 'Selenium', x: 80, y: 30 },
+            { name: 'Jest', x: 15, y: 60 },
+            { name: 'Cypress', x: 85, y: 60 },
+            { name: 'Docker', x: 35, y: 70 },
+            { name: 'Python', x: 65, y: 70 },
+            { name: 'K8s', x: 50, y: 50 },
+            { name: 'Git', x: 30, y: 45 },
+            { name: 'Node.js', x: 70, y: 45 }
+        ];
+
+        let nodes = [];
+        let connections = [];
+        let animationInterval;
+        let lightningTimeout;
+
+        // Create tech nodes
+        function createNodes() {
+            techNodes.forEach((tech, index) => {
+                const node = document.createElement('div');
+                node.className = 'tech-node';
+                node.style.left = `${tech.x}%`;
+                node.style.top = `${tech.y}%`;
+                node.dataset.index = index;
+                
+                const dot = document.createElement('div');
+                dot.className = 'node-dot';
+                
+                const label = document.createElement('div');
+                label.className = 'node-label';
+                label.textContent = tech.name;
+                
+                node.appendChild(dot);
+                node.appendChild(label);
+                constellationContainer.appendChild(node);
+                
+                nodes.push({
+                    element: node,
+                    x: tech.x,
+                    y: tech.y,
+                    name: tech.name,
+                    alive: true
+                });
+            });
+        }
+
+        // Draw connection lines
+        function drawConnections() {
+            connectionLines.innerHTML = '';
+            
+            // Create a mesh of connections
+            const connectionPairs = [
+                [0, 1], [0, 2], [1, 3], [2, 4], [0, 7],
+                [1, 8], [2, 9], [3, 5], [4, 6], [7, 8],
+                [7, 9], [5, 6], [8, 9], [3, 8], [4, 9]
+            ];
+            
+            connectionPairs.forEach(([i, j]) => {
+                if (nodes[i] && nodes[j] && nodes[i].alive && nodes[j].alive) {
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.classList.add('connection-line');
+                    line.setAttribute('x1', `${nodes[i].x}%`);
+                    line.setAttribute('y1', `${nodes[i].y}%`);
+                    line.setAttribute('x2', `${nodes[j].x}%`);
+                    line.setAttribute('y2', `${nodes[j].y}%`);
+                    connectionLines.appendChild(line);
+                }
+            });
+        }
+
+        // Shoot laser between random nodes
+        function shootLaser() {
+            const aliveNodes = nodes.filter(n => n.alive);
+            if (aliveNodes.length < 2) return;
+            
+            const shooter = aliveNodes[Math.floor(Math.random() * aliveNodes.length)];
+            const target = aliveNodes.filter(n => n !== shooter)[Math.floor(Math.random() * (aliveNodes.length - 1))];
+            
+            const laser = document.createElement('div');
+            laser.className = 'laser-beam';
+            
+            // Calculate position and angle
+            const rect = constellationContainer.getBoundingClientRect();
+            const x1 = (shooter.x / 100) * rect.width;
+            const y1 = (shooter.y / 100) * rect.height;
+            const x2 = (target.x / 100) * rect.width;
+            const y2 = (target.y / 100) * rect.height;
+            
+            const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+            const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
+            
+            laser.style.width = `${distance}px`;
+            laser.style.left = `${shooter.x}%`;
+            laser.style.top = `${shooter.y}%`;
+            laser.style.transform = `rotate(${angle}deg)`;
+            
+            constellationContainer.appendChild(laser);
+            
+            // Remove laser after animation
+            setTimeout(() => laser.remove(), 500);
+            
+            // Sometimes destroy the target
+            if (Math.random() < 0.15) { // 15% chance to destroy
+                setTimeout(() => {
+                    if (target.alive) {
+                        target.alive = false;
+                        target.element.style.display = 'none';
+                        
+                        // Create explosion
+                        const explosion = document.createElement('div');
+                        explosion.className = 'node-explosion';
+                        explosion.style.left = `${target.x}%`;
+                        explosion.style.top = `${target.y}%`;
+                        constellationContainer.appendChild(explosion);
+                        
+                        setTimeout(() => explosion.remove(), 600);
+                        
+                        // Redraw connections
+                        drawConnections();
+                    }
+                }, 300);
+            }
+        }
+
+        // Epic lightning finale
+        function lightningFinale() {
+            clearInterval(animationInterval);
+            
+            const aliveNodes = nodes.filter(n => n.alive);
+            if (aliveNodes.length === 0) return;
+            
+            // Create multiple lightning bolts
+            const centerX = 50;
+            const centerY = 50;
+            
+            aliveNodes.forEach((node, index) => {
+                setTimeout(() => {
+                    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                    svg.style.position = 'absolute';
+                    svg.style.width = '100%';
+                    svg.style.height = '100%';
+                    
+                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    path.classList.add('lightning-bolt');
+                    
+                    // Create zigzag lightning path
+                    const points = [];
+                    const segments = 5;
+                    for (let i = 0; i <= segments; i++) {
+                        const t = i / segments;
+                        const x = centerX + (node.x - centerX) * t + (Math.random() - 0.5) * 10;
+                        const y = centerY + (node.y - centerY) * t + (Math.random() - 0.5) * 10;
+                        points.push(`${i === 0 ? 'M' : 'L'} ${x}% ${y}%`);
+                    }
+                    
+                    path.setAttribute('d', points.join(' '));
+                    svg.appendChild(path);
+                    lightningContainer.appendChild(svg);
+                    
+                    // Remove lightning after animation
+                    setTimeout(() => svg.remove(), 300);
+                    
+                    // Hide node
+                    node.alive = false;
+                    node.element.style.display = 'none';
+                }, index * 100);
+            });
+            
+            // Final explosion
+            setTimeout(() => {
+                const finalBoom = document.createElement('div');
+                finalBoom.className = 'final-explosion';
+                constellationContainer.appendChild(finalBoom);
+                
+                setTimeout(() => {
+                    finalBoom.remove();
+                    // Restart the animation
+                    resetConstellation();
+                }, 1500);
+            }, aliveNodes.length * 100 + 200);
+        }
+
+        // Reset and restart
+        function resetConstellation() {
+            // Clear everything
+            nodes.forEach(node => node.element.remove());
+            nodes = [];
+            connectionLines.innerHTML = '';
+            
+            // Recreate
+            setTimeout(() => {
+                createNodes();
+                drawConnections();
+                startAnimation();
+            }, 1000);
+        }
+
+        // Start the animation
+        function startAnimation() {
+            // Random shooting
+            animationInterval = setInterval(() => {
+                shootLaser();
+            }, 800);
+            
+            // Schedule lightning finale (between 15-25 seconds)
+            const finaleTime = 15000 + Math.random() * 10000;
+            lightningTimeout = setTimeout(() => {
+                lightningFinale();
+            }, finaleTime);
+        }
+
+        // Initialize
+        createNodes();
+        drawConnections();
+        startAnimation();
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Parallax effect for orbs
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const orbs = document.querySelectorAll('.floating-orb');
+            orbs.forEach((orb, index) => {
+                const rate = scrolled * -(index + 1) * 0.1;
+                orb.style.transform = `translateY(${rate}px)`;
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-card, .project-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s, transform 0.6s';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
