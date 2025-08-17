@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petr Kindlmann | QA Automation Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -84,14 +87,18 @@
         }
 
         @keyframes float {
-            0%, 100% { 
-                transform: translate(0, 0) rotate(0deg); 
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
             }
-            33% { 
-                transform: translate(100px, -50px) rotate(120deg); 
+
+            33% {
+                transform: translate(100px, -50px) rotate(120deg);
             }
-            66% { 
-                transform: translate(-50px, 100px) rotate(240deg); 
+
+            66% {
+                transform: translate(-50px, 100px) rotate(240deg);
             }
         }
 
@@ -116,8 +123,15 @@
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         /* Navigation */
@@ -321,10 +335,13 @@
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(-50%, -50%) scale(1);
                 opacity: 0.3;
             }
+
             50% {
                 transform: translate(-50%, -50%) scale(1.5);
                 opacity: 0;
@@ -359,6 +376,7 @@
                 opacity: 1;
                 filter: brightness(2);
             }
+
             100% {
                 opacity: 0;
             }
@@ -380,10 +398,12 @@
                 transform: scale(0);
                 opacity: 1;
             }
+
             50% {
                 transform: scale(1.5);
                 opacity: 0.5;
             }
+
             100% {
                 transform: scale(2);
                 opacity: 0;
@@ -411,10 +431,12 @@
                 opacity: 0;
                 stroke-width: 1;
             }
+
             50% {
                 opacity: 1;
                 stroke-width: 5;
             }
+
             100% {
                 opacity: 0;
                 stroke-width: 2;
@@ -429,7 +451,7 @@
             width: 400px;
             height: 400px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, var(--primary) 30%, var(--accent) 60%, transparent 100%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, var(--primary) 30%, var(--accent) 60%, transparent 100%);
             animation: final-boom 1.5s ease-out forwards;
             pointer-events: none;
             z-index: 30;
@@ -440,10 +462,12 @@
                 transform: translate(-50%, -50%) scale(0);
                 opacity: 1;
             }
+
             50% {
                 transform: translate(-50%, -50%) scale(1.5);
                 opacity: 0.8;
             }
+
             100% {
                 transform: translate(-50%, -50%) scale(3);
                 opacity: 0;
@@ -759,6 +783,111 @@
         }
 
         /* Responsive */
+        /* Content Creation scroller */
+        .content-creation {
+            padding: 8rem 3rem;
+            background: linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%);
+        }
+
+        .cc-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .cc-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cc-sub {
+            color: var(--slate);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cc-scroller {
+            --gap: 1.25rem;
+            position: relative;
+            overflow: hidden;
+            mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+        }
+
+        .cc-track {
+            display: flex;
+            gap: var(--gap);
+            width: max-content;
+            animation: cc-marquee 28s linear infinite;
+        }
+
+        .cc-scroller:hover .cc-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes cc-marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+
+            /* we duplicate the set in JS */
+        }
+
+        .cc-card {
+            width: 360px;
+            min-height: 160px;
+            padding: 1.25rem;
+            border-radius: 16px;
+            background: rgba(30, 41, 59, 0.35);
+            border: 1px solid rgba(74, 222, 128, 0.22);
+            box-shadow: 0 10px 24px rgba(2, 6, 23, 0.4);
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+        }
+
+        .cc-card:hover {
+            transform: translateY(-4px);
+            background: rgba(30, 41, 59, 0.5);
+            box-shadow: 0 20px 40px rgba(74, 222, 128, 0.25);
+        }
+
+        .cc-card h4 {
+            color: var(--light);
+            font-size: 1.15rem;
+            margin-bottom: .35rem;
+        }
+
+        .cc-card p {
+            color: var(--slate);
+            font-family: 'Inter', sans-serif;
+            font-size: .98rem;
+        }
+
+        /* subtle icon */
+        .cc-ico {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--darker);
+            font-weight: 700;
+            margin-bottom: .6rem;
+        }
+
+        /* accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .cc-track {
+                animation: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -780,70 +909,10 @@
             .project-grid {
                 grid-template-columns: 1fr;
             }
-            /* Content Creation scroller */
-.content-creation {
-  padding: 8rem 3rem;
-  background: linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%);
-}
-.cc-header { text-align:center; margin-bottom:2.5rem; }
-.cc-title {
-  font-size: 2.4rem; font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.cc-sub { color: var(--slate); font-family: 'Inter', sans-serif; }
-
-.cc-scroller {
-  --gap: 1.25rem;
-  position: relative;
-  overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
-}
-.cc-track {
-  display: flex; gap: var(--gap);
-  width: max-content;
-  animation: cc-marquee 28s linear infinite;
-}
-.cc-scroller:hover .cc-track { animation-play-state: paused; }
-
-@keyframes cc-marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); } /* because we’ll duplicate the set */
-}
-
-.cc-card {
-  width: 360px; min-height: 160px;
-  padding: 1.25rem;
-  border-radius: 16px;
-  background: rgba(30,41,59,0.35);
-  border: 1px solid rgba(74,222,128,0.22);
-  box-shadow: 0 10px 24px rgba(2,6,23,0.4);
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-}
-.cc-card:hover {
-  transform: translateY(-4px);
-  background: rgba(30,41,59,0.5);
-  box-shadow: 0 20px 40px rgba(74,222,128,0.25);
-}
-.cc-card h4 { color: var(--light); font-size: 1.15rem; margin-bottom: .35rem; }
-.cc-card p  { color: var(--slate); font-family: 'Inter', sans-serif; font-size: .98rem; }
-
-/* subtle icon */
-.cc-ico {
-  width: 34px; height: 34px; border-radius: 10px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  display:inline-flex; align-items:center; justify-content:center;
-  color: var(--darker); font-weight:700; margin-bottom:.6rem;
-}
-
-/* accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .cc-track { animation: none; }
-            }
         }
     </style>
 </head>
+
 <body>
     <!-- Background -->
     <div class="bg-container">
@@ -875,8 +944,8 @@
                 <h1>Petr Kindlmann</h1>
                 <p class="subtitle">Test automation architect</p>
                 <p>
-                    Builds test automation frameworks using Robot Framework, Playwright, and Cypress. 
-                    Reduces regression testing time through automation integration and 
+                    Builds test automation frameworks using Robot Framework, Playwright, and Cypress.
+                    Reduces regression testing time through automation integration and
                     systematic defect detection methodologies.
                 </p>
                 <a href="#contact" class="cta-button">Contact</a>
@@ -898,7 +967,7 @@
             <div class="skill-card">
                 <h3 class="skill-title">Test Automation</h3>
                 <p class="skill-description">
-                    Implements test automation frameworks using Robot Framework, Playwright, and Cypress. 
+                    Implements test automation frameworks using Robot Framework, Playwright, and Cypress.
                     Reduces manual testing effort through systematic automation deployment.
                 </p>
                 <div class="skill-tags">
@@ -910,7 +979,7 @@
             <div class="skill-card">
                 <h3 class="skill-title">CI/CD Integration</h3>
                 <p class="skill-description">
-                    Integrates automated tests into deployment pipelines. 
+                    Integrates automated tests into deployment pipelines.
                     Configures test execution triggers and failure notification systems.
                 </p>
                 <div class="skill-tags">
@@ -922,7 +991,7 @@
             <div class="skill-card">
                 <h3 class="skill-title">Security Testing</h3>
                 <p class="skill-description">
-                    Identifies security vulnerabilities using OWASP testing methodology. 
+                    Identifies security vulnerabilities using OWASP testing methodology.
                     Validates authentication mechanisms and session management.
                 </p>
                 <div class="skill-tags">
@@ -934,7 +1003,7 @@
             <div class="skill-card">
                 <h3 class="skill-title">API Testing</h3>
                 <p class="skill-description">
-                    Tests REST and GraphQL APIs for functional and performance requirements. 
+                    Tests REST and GraphQL APIs for functional and performance requirements.
                     Validates data contracts and response schemas.
                 </p>
                 <div class="skill-tags">
@@ -946,7 +1015,7 @@
             <div class="skill-card">
                 <h3 class="skill-title">Test Strategy</h3>
                 <p class="skill-description">
-                    Develops risk-based testing approaches for CMS and video platforms. 
+                    Develops risk-based testing approaches for CMS and video platforms.
                     Implements defect lifecycle management and quality metrics tracking.
                 </p>
                 <div class="skill-tags">
@@ -958,7 +1027,7 @@
             <div class="skill-card">
                 <h3 class="skill-title">Programming</h3>
                 <p class="skill-description">
-                    Writes test automation code in Python and JavaScript. 
+                    Writes test automation code in Python and JavaScript.
                     Maintains test frameworks and debugging automation failures.
                 </p>
                 <div class="skill-tags">
@@ -970,17 +1039,20 @@
         </div>
     </section>
 
-    
+
 
     <!-- Experience Section -->
-    <section class="experience" id="experience" style="padding: 8rem 3rem; background: linear-gradient(180deg, var(--dark) 0%, var(--darker) 50%, var(--dark) 100%);">
+    <section class="experience" id="experience"
+        style="padding: 8rem 3rem; background: linear-gradient(180deg, var(--dark) 0%, var(--darker) 50%, var(--dark) 100%);">
         <div class="section-header">
             <h2 class="section-title">Work Experience</h2>
             <p class="section-subtitle">QA automation and testing roles</p>
         </div>
         <div style="max-width: 1000px; margin: 0 auto;">
-            <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 2rem;">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+            <div
+                style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 2rem;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
                     <div>
                         <h3 style="color: var(--light); font-size: 1.4rem; margin-bottom: 0.5rem;">QA Engineer</h3>
                         <p style="color: var(--primary); font-weight: 600;">Devcity</p>
@@ -988,19 +1060,24 @@
                     <span style="color: var(--slate); font-size: 0.9rem;">2022 - Present</span>
                 </div>
                 <p style="color: var(--slate); line-height: 1.7; margin-bottom: 1rem;">
-                    Implements test automation frameworks for CMS and video platform products. 
+                    Implements test automation frameworks for CMS and video platform products.
                     Reduced regression testing time by 40% through systematic automation deployment.
                 </p>
                 <div style="margin-left: 1rem;">
-                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Automated test suite implementation</p>
-                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Test documentation standardization</p>
-                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Security vulnerability identification</p>
+                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Automated test suite implementation
+                    </p>
+                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Test documentation standardization
+                    </p>
+                    <p style="color: var(--light-slate); margin-bottom: 0.5rem;">• Security vulnerability identification
+                    </p>
                     <p style="color: var(--light-slate);">• Test-driven development collaboration</p>
                 </div>
             </div>
-            
-            <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 2rem;">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+
+            <div
+                style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 2rem;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
                     <div>
                         <h3 style="color: var(--light); font-size: 1.4rem; margin-bottom: 0.5rem;">QA Engineer</h3>
                         <p style="color: var(--primary); font-weight: 600;">Collabim s.r.o.</p>
@@ -1008,7 +1085,7 @@
                     <span style="color: var(--slate); font-size: 0.9rem;">2021</span>
                 </div>
                 <p style="color: var(--slate); line-height: 1.7; margin-bottom: 1rem;">
-                    Implemented Robot Framework automation for SEO analysis applications. 
+                    Implemented Robot Framework automation for SEO analysis applications.
                     Reduced manual testing effort by 30% through strategic test automation.
                 </p>
                 <div style="margin-left: 1rem;">
@@ -1017,9 +1094,11 @@
                     <p style="color: var(--light-slate);">• Test automation strategy implementation</p>
                 </div>
             </div>
-            
-            <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 16px; padding: 2rem;">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+
+            <div
+                style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 16px; padding: 2rem;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
                     <div>
                         <h3 style="color: var(--light); font-size: 1.4rem; margin-bottom: 0.5rem;">QA Engineer</h3>
                         <p style="color: var(--primary); font-weight: 600;">Kindred s.r.o.</p>
@@ -1027,7 +1106,7 @@
                     <span style="color: var(--slate); font-size: 0.9rem;">2021</span>
                 </div>
                 <p style="color: var(--slate); line-height: 1.7; margin-bottom: 1rem;">
-                    User acceptance testing for multinational e-commerce platforms. 
+                    User acceptance testing for multinational e-commerce platforms.
                     Validated functionality across multiple languages and regional markets.
                 </p>
                 <div style="margin-left: 1rem;">
@@ -1051,7 +1130,7 @@
                 <div class="project-content">
                     <h3 class="project-title">Playwright Test Doctor</h3>
                     <p class="project-description">
-                        AI-powered Playwright test healing system. Detects failing selectors and 
+                        AI-powered Playwright test healing system. Detects failing selectors and
                         generates replacement strategies. Reduces test maintenance by 60%.
                     </p>
                     <div class="project-tech">
@@ -1070,7 +1149,7 @@
                 <div class="project-content">
                     <h3 class="project-title">QA Intelligence Suite</h3>
                     <p class="project-description">
-                        20-analyzer testing platform for repository health, test coverage, 
+                        20-analyzer testing platform for repository health, test coverage,
                         performance bottlenecks, and migration risk assessment.
                     </p>
                     <div class="project-tech">
@@ -1089,7 +1168,7 @@
                 <div class="project-content">
                     <h3 class="project-title">Test Strategy Optimizer</h3>
                     <p class="project-description">
-                        4-pillar testing framework with health monitoring, intelligence analysis, 
+                        4-pillar testing framework with health monitoring, intelligence analysis,
                         strategy optimization, and automated training modules.
                     </p>
                     <div class="project-tech">
@@ -1107,60 +1186,60 @@
     </section>
 
     <section class="content-creation" id="content">
-  <div class="cc-header">
-    <h2 class="cc-title">Content creation</h2>
-    <p class="cc-sub">Selectable text cards with smooth motion</p>
-  </div>
+        <div class="cc-header">
+            <h2 class="cc-title">Content creation</h2>
+            <p class="cc-sub">Selectable text cards with smooth motion</p>
+        </div>
 
-  <div class="cc-scroller">
-    <div class="cc-track" id="ccTrack">
-      <!-- One set of cards -->
-      <article class="cc-card">
-        <div class="cc-ico">CV</div>
-        <h4>Resumes</h4>
-        <p>Stand out with a crafted resume that highlights your strengths.</p>
-      </article>
+        <div class="cc-scroller">
+            <div class="cc-track" id="ccTrack">
+                <!-- One set of cards -->
+                <article class="cc-card">
+                    <div class="cc-ico">CV</div>
+                    <h4>Resumes</h4>
+                    <p>Stand out with a crafted resume that highlights your strengths.</p>
+                </article>
 
-      <article class="cc-card">
-        <div class="cc-ico">DN</div>
-        <h4>Domain names</h4>
-        <p>Memorable, brand-aligned names that make a strong statement.</p>
-      </article>
+                <article class="cc-card">
+                    <div class="cc-ico">DN</div>
+                    <h4>Domain names</h4>
+                    <p>Memorable, brand-aligned names that make a strong statement.</p>
+                </article>
 
-      <article class="cc-card">
-        <div class="cc-ico">CT</div>
-        <h4>Customer testimonials</h4>
-        <p>Showcase genuine stories that build trust and credibility.</p>
-      </article>
+                <article class="cc-card">
+                    <div class="cc-ico">CT</div>
+                    <h4>Customer testimonials</h4>
+                    <p>Showcase genuine stories that build trust and credibility.</p>
+                </article>
 
-      <article class="cc-card">
-        <div class="cc-ico">UG</div>
-        <h4>User guides</h4>
-        <p>User-friendly guides that reduce confusion and support customers.</p>
-      </article>
+                <article class="cc-card">
+                    <div class="cc-ico">UG</div>
+                    <h4>User guides</h4>
+                    <p>User-friendly guides that reduce confusion and support customers.</p>
+                </article>
 
-      <article class="cc-card">
-        <div class="cc-ico">AD</div>
-        <h4>Ad copy</h4>
-        <p>Short, punchy lines for paid and organic placements.</p>
-      </article>
+                <article class="cc-card">
+                    <div class="cc-ico">AD</div>
+                    <h4>Ad copy</h4>
+                    <p>Short, punchy lines for paid and organic placements.</p>
+                </article>
 
-      <article class="cc-card">
-        <div class="cc-ico">EM</div>
-        <h4>Email sequences</h4>
-        <p>Welcome, launch, and re-engagement flows ready to send.</p>
-      </article>
-      <!-- The JS below duplicates this set for a seamless loop -->
-    </div>
-  </div>
-</section>
+                <article class="cc-card">
+                    <div class="cc-ico">EM</div>
+                    <h4>Email sequences</h4>
+                    <p>Welcome, launch, and re-engagement flows ready to send.</p>
+                </article>
+                <!-- The JS below duplicates this set for a seamless loop -->
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="contact-content">
             <h2 class="contact-title">Contact Information</h2>
             <p class="contact-subtitle">
-                QA automation engineer based in České Budějovice, Czechia. 
+                QA automation engineer based in České Budějovice, Czechia.
                 Available for test automation projects and quality assurance consulting.
             </p>
             <a href="mailto:thepetr@gmail.com" class="contact-button">thepetr@gmail.com</a>
@@ -1194,7 +1273,7 @@
         const constellationContainer = document.getElementById('constellationContainer');
         const connectionLines = document.getElementById('connectionLines');
         const lightningContainer = document.getElementById('lightningContainer');
-        
+
         // Tech nodes data
         const techNodes = [
             { name: 'Playwright', x: 50, y: 20 },
@@ -1222,18 +1301,18 @@
                 node.style.left = `${tech.x}%`;
                 node.style.top = `${tech.y}%`;
                 node.dataset.index = index;
-                
+
                 const dot = document.createElement('div');
                 dot.className = 'node-dot';
-                
+
                 const label = document.createElement('div');
                 label.className = 'node-label';
                 label.textContent = tech.name;
-                
+
                 node.appendChild(dot);
                 node.appendChild(label);
                 constellationContainer.appendChild(node);
-                
+
                 nodes.push({
                     element: node,
                     x: tech.x,
@@ -1247,14 +1326,14 @@
         // Draw connection lines
         function drawConnections() {
             connectionLines.innerHTML = '';
-            
+
             // Create a mesh of connections
             const connectionPairs = [
                 [0, 1], [0, 2], [1, 3], [2, 4], [0, 7],
                 [1, 8], [2, 9], [3, 5], [4, 6], [7, 8],
                 [7, 9], [5, 6], [8, 9], [3, 8], [4, 9]
             ];
-            
+
             connectionPairs.forEach(([i, j]) => {
                 if (nodes[i] && nodes[j] && nodes[i].alive && nodes[j].alive) {
                     const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
@@ -1272,49 +1351,49 @@
         function shootLaser() {
             const aliveNodes = nodes.filter(n => n.alive);
             if (aliveNodes.length < 2) return;
-            
+
             const shooter = aliveNodes[Math.floor(Math.random() * aliveNodes.length)];
             const target = aliveNodes.filter(n => n !== shooter)[Math.floor(Math.random() * (aliveNodes.length - 1))];
-            
+
             const laser = document.createElement('div');
             laser.className = 'laser-beam';
-            
+
             // Calculate position and angle
             const rect = constellationContainer.getBoundingClientRect();
             const x1 = (shooter.x / 100) * rect.width;
             const y1 = (shooter.y / 100) * rect.height;
             const x2 = (target.x / 100) * rect.width;
             const y2 = (target.y / 100) * rect.height;
-            
+
             const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
             const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
-            
+
             laser.style.width = `${distance}px`;
             laser.style.left = `${shooter.x}%`;
             laser.style.top = `${shooter.y}%`;
             laser.style.transform = `rotate(${angle}deg)`;
-            
+
             constellationContainer.appendChild(laser);
-            
+
             // Remove laser after animation
             setTimeout(() => laser.remove(), 500);
-            
+
             // Sometimes destroy the target
             if (Math.random() < 0.15) { // 15% chance to destroy
                 setTimeout(() => {
                     if (target.alive) {
                         target.alive = false;
                         target.element.style.display = 'none';
-                        
+
                         // Create explosion
                         const explosion = document.createElement('div');
                         explosion.className = 'node-explosion';
                         explosion.style.left = `${target.x}%`;
                         explosion.style.top = `${target.y}%`;
                         constellationContainer.appendChild(explosion);
-                        
+
                         setTimeout(() => explosion.remove(), 600);
-                        
+
                         // Redraw connections
                         drawConnections();
                     }
@@ -1325,24 +1404,24 @@
         // Epic lightning finale
         function lightningFinale() {
             clearInterval(animationInterval);
-            
+
             const aliveNodes = nodes.filter(n => n.alive);
             if (aliveNodes.length === 0) return;
-            
+
             // Create multiple lightning bolts
             const centerX = 50;
             const centerY = 50;
-            
+
             aliveNodes.forEach((node, index) => {
                 setTimeout(() => {
                     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
                     svg.style.position = 'absolute';
                     svg.style.width = '100%';
                     svg.style.height = '100%';
-                    
+
                     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
                     path.classList.add('lightning-bolt');
-                    
+
                     // Create zigzag lightning path
                     const points = [];
                     const segments = 5;
@@ -1352,26 +1431,26 @@
                         const y = centerY + (node.y - centerY) * t + (Math.random() - 0.5) * 10;
                         points.push(`${i === 0 ? 'M' : 'L'} ${x}% ${y}%`);
                     }
-                    
+
                     path.setAttribute('d', points.join(' '));
                     svg.appendChild(path);
                     lightningContainer.appendChild(svg);
-                    
+
                     // Remove lightning after animation
                     setTimeout(() => svg.remove(), 300);
-                    
+
                     // Hide node
                     node.alive = false;
                     node.element.style.display = 'none';
                 }, index * 100);
             });
-            
+
             // Final explosion
             setTimeout(() => {
                 const finalBoom = document.createElement('div');
                 finalBoom.className = 'final-explosion';
                 constellationContainer.appendChild(finalBoom);
-                
+
                 setTimeout(() => {
                     finalBoom.remove();
                     // Restart the animation
@@ -1386,7 +1465,7 @@
             nodes.forEach(node => node.element.remove());
             nodes = [];
             connectionLines.innerHTML = '';
-            
+
             // Recreate
             setTimeout(() => {
                 createNodes();
@@ -1401,7 +1480,7 @@
             animationInterval = setInterval(() => {
                 shootLaser();
             }, 800);
-            
+
             // Schedule lightning finale (between 15-25 seconds)
             const finaleTime = 15000 + Math.random() * 10000;
             lightningTimeout = setTimeout(() => {
@@ -1456,22 +1535,21 @@
             el.style.transition = 'opacity 0.6s, transform 0.6s';
             observer.observe(el);
         });
-        <script>
-  // Duplicate cards for seamless 50% → 0% loop
-  (function () {
-    const track = document.getElementById('ccTrack');
-    if (!track) return;
-    const clone = track.cloneNode(true);
-    // move all children of the original into a fragment we can append again
-    const secondSet = document.createDocumentFragment();
-    Array.from(track.children).forEach((el, i) => {
-      if (el.classList && el.classList.contains('cc-card')) {
-        secondSet.appendChild(el.cloneNode(true));
-      }
-    });
-    track.appendChild(secondSet);
-  }());
-</script>
+        // Duplicate cards for seamless 50% → 0% loop
+        (function () {
+            const track = document.getElementById('ccTrack');
+            if (!track) return;
+            const clone = track.cloneNode(true);
+            // move all children of the original into a fragment we can append again
+            const secondSet = document.createDocumentFragment();
+            Array.from(track.children).forEach((el, i) => {
+                if (el.classList && el.classList.contains('cc-card')) {
+                    secondSet.appendChild(el.cloneNode(true));
+                }
+            });
+            track.appendChild(secondSet);
+        }());
     </script>
 </body>
+
 </html>
