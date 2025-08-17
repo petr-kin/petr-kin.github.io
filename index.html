@@ -780,6 +780,67 @@
             .project-grid {
                 grid-template-columns: 1fr;
             }
+            /* Content Creation scroller */
+.content-creation {
+  padding: 8rem 3rem;
+  background: linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%);
+}
+.cc-header { text-align:center; margin-bottom:2.5rem; }
+.cc-title {
+  font-size: 2.4rem; font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.cc-sub { color: var(--slate); font-family: 'Inter', sans-serif; }
+
+.cc-scroller {
+  --gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.cc-track {
+  display: flex; gap: var(--gap);
+  width: max-content;
+  animation: cc-marquee 28s linear infinite;
+}
+.cc-scroller:hover .cc-track { animation-play-state: paused; }
+
+@keyframes cc-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* because we’ll duplicate the set */
+}
+
+.cc-card {
+  width: 360px; min-height: 160px;
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: rgba(30,41,59,0.35);
+  border: 1px solid rgba(74,222,128,0.22);
+  box-shadow: 0 10px 24px rgba(2,6,23,0.4);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.cc-card:hover {
+  transform: translateY(-4px);
+  background: rgba(30,41,59,0.5);
+  box-shadow: 0 20px 40px rgba(74,222,128,0.25);
+}
+.cc-card h4 { color: var(--light); font-size: 1.15rem; margin-bottom: .35rem; }
+.cc-card p  { color: var(--slate); font-family: 'Inter', sans-serif; font-size: .98rem; }
+
+/* subtle icon */
+.cc-ico {
+  width: 34px; height: 34px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display:inline-flex; align-items:center; justify-content:center;
+  color: var(--darker); font-weight:700; margin-bottom:.6rem;
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cc-track { animation: none; }
+            }
         }
     </style>
 </head>
@@ -908,6 +969,8 @@
             </div>
         </div>
     </section>
+
+    
 
     <!-- Experience Section -->
     <section class="experience" id="experience" style="padding: 8rem 3rem; background: linear-gradient(180deg, var(--dark) 0%, var(--darker) 50%, var(--dark) 100%);">
@@ -1042,6 +1105,55 @@
             </div>
         </div>
     </section>
+
+    <section class="content-creation" id="content">
+  <div class="cc-header">
+    <h2 class="cc-title">Content creation</h2>
+    <p class="cc-sub">Selectable text cards with smooth motion</p>
+  </div>
+
+  <div class="cc-scroller">
+    <div class="cc-track" id="ccTrack">
+      <!-- One set of cards -->
+      <article class="cc-card">
+        <div class="cc-ico">CV</div>
+        <h4>Resumes</h4>
+        <p>Stand out with a crafted resume that highlights your strengths.</p>
+      </article>
+
+      <article class="cc-card">
+        <div class="cc-ico">DN</div>
+        <h4>Domain names</h4>
+        <p>Memorable, brand-aligned names that make a strong statement.</p>
+      </article>
+
+      <article class="cc-card">
+        <div class="cc-ico">CT</div>
+        <h4>Customer testimonials</h4>
+        <p>Showcase genuine stories that build trust and credibility.</p>
+      </article>
+
+      <article class="cc-card">
+        <div class="cc-ico">UG</div>
+        <h4>User guides</h4>
+        <p>User-friendly guides that reduce confusion and support customers.</p>
+      </article>
+
+      <article class="cc-card">
+        <div class="cc-ico">AD</div>
+        <h4>Ad copy</h4>
+        <p>Short, punchy lines for paid and organic placements.</p>
+      </article>
+
+      <article class="cc-card">
+        <div class="cc-ico">EM</div>
+        <h4>Email sequences</h4>
+        <p>Welcome, launch, and re-engagement flows ready to send.</p>
+      </article>
+      <!-- The JS below duplicates this set for a seamless loop -->
+    </div>
+  </div>
+</section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -1344,6 +1456,22 @@
             el.style.transition = 'opacity 0.6s, transform 0.6s';
             observer.observe(el);
         });
+        <script>
+  // Duplicate cards for seamless 50% → 0% loop
+  (function () {
+    const track = document.getElementById('ccTrack');
+    if (!track) return;
+    const clone = track.cloneNode(true);
+    // move all children of the original into a fragment we can append again
+    const secondSet = document.createDocumentFragment();
+    Array.from(track.children).forEach((el, i) => {
+      if (el.classList && el.classList.contains('cc-card')) {
+        secondSet.appendChild(el.cloneNode(true));
+      }
+    });
+    track.appendChild(secondSet);
+  }());
+</script>
     </script>
 </body>
 </html>
