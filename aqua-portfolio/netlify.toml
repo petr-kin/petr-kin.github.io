@@ -1,6 +1,6 @@
 [build]
   base = "aqua-portfolio"
-  command = "npm run build"
+  command = "npm install && npm run build"
   publish = ".next"
 
 [[plugins]]
@@ -8,6 +8,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  NEXT_TELEMETRY_DISABLED = "1"
 
 # Cache settings for optimal performance
 [[headers]]

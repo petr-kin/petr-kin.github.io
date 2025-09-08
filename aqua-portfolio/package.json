@@ -42,7 +42,6 @@
     "performance:baseline": "node scripts/performance-monitor.js --baseline",
     "performance:compare": "node scripts/performance-monitor.js --compare",
     "generate:favicons": "node scripts/generate-favicons.js",
-    "prebuild": "npm run generate:favicons",
     "storybook": "node node_modules/storybook/bin/index.cjs dev -p 6006",
     "build-storybook": "node node_modules/storybook/bin/index.cjs build",
     "agents:all": "npx tsx src/agents/AgentOrchestrator.ts",
