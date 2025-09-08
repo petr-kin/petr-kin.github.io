@@ -57,7 +57,17 @@ pnpm-lock.yaml.backup
 .vercel
 .turbo
 
-# Archives (you have some in aqua-portfolio)
+# Archives
 *.zip
 *.tar.gz
 *.rar
+
+# Build info
+tsconfig.tsbuildinfo
+forgotten-features-report.json
+
+# QA/Testing artifacts (keep code, ignore outputs)
+coverage/
+playwright-report/
+test-results/
+lighthouse-report.html
