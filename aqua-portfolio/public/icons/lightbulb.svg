@@ -1,0 +1,27 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="url(#gradient)"/>
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Bulb -->
+  <circle cx="32" cy="28" r="12" fill="white" fill-opacity="0.9"/>
+  
+  <!-- Filament -->
+  <path d="M26 24 Q32 26 38 24 Q32 30 26 24" stroke="#f59e0b" stroke-width="1.5" fill="none"/>
+  <path d="M26 32 Q32 30 38 32 Q32 26 26 32" stroke="#f59e0b" stroke-width="1.5" fill="none"/>
+  
+  <!-- Base -->
+  <rect x="28" y="40" width="8" height="4" rx="1" fill="white" fill-opacity="0.7"/>
+  <rect x="27" y="44" width="10" height="2" rx="1" fill="white" fill-opacity="0.5"/>
+  
+  <!-- Light rays -->
+  <path d="M32 12 L32 8" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M44 20 L47 17" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M44 36 L47 39" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M20 20 L17 17" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <path d="M20 36 L17 39" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+</svg>

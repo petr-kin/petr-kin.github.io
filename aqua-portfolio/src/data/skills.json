@@ -1,0 +1,50 @@
+{
+  "primarySkills": [
+    "Playwright",
+    "TypeScript", 
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "Test Automation",
+    "QA Engineering",
+    "CI/CD",
+    "Performance Testing",
+    "AI Integration"
+  ],
+  "tools": [
+    "Playwright",
+    "Cypress", 
+    "Robot Framework",
+    "Jest",
+    "Docker",
+    "GitHub Actions",
+    "Netlify",
+    "Vercel"
+  ],
+  "languages": [
+    "TypeScript",
+    "JavaScript", 
+    "Python",
+    "HTML5",
+    "CSS3"
+  ],
+  "frameworks": [
+    "React",
+    "Next.js",
+    "Node.js",
+    "Tailwind CSS",
+    "Framer Motion"
+  ],
+  "aiTools": [
+    "Claude API",
+    "OpenAI GPT",
+    "Custom AI Agents",
+    "Pattern Recognition",
+    "Test Healing"
+  ],
+  "certifications": [
+    "QA Automation Specialist",
+    "Playwright Certified",
+    "Security Testing (OWASP)"
+  ]
+}

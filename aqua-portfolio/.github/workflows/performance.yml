@@ -1,0 +1,238 @@
+name: Performance Testing
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run performance tests daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+jobs:
+  lighthouse-tests:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [20.x]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps chromium
+      
+    - name: Build application
+      run: npm run build
+      
+    - name: Start application
+      run: |
+        npm start &
+        sleep 10
+        curl --retry 10 --retry-delay 3 --retry-connrefused http://localhost:3000
+      
+    - name: Run Lighthouse CI tests
+      run: npm run lighthouse:ci
+      
+    - name: Run Playwright Lighthouse tests
+      run: npm run test:lighthouse
+      
+    - name: Upload Lighthouse reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: lighthouse-reports
+        path: lighthouse-reports/
+        retention-days: 30
+        
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-results
+        path: test-results/
+        retention-days: 30
+
+    - name: Comment PR with Lighthouse results
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const path = require('path');
+          
+          try {
+            const reportPath = path.join('lighthouse-reports', 'lighthouse-summary.md');
+            const report = fs.readFileSync(reportPath, 'utf8');
+            
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            
+            const existingComment = comments.find(comment => 
+              comment.body.includes('# Lighthouse Performance Report')
+            );
+            
+            const commentBody = `${report}
+            
+            <details>
+            <summary>🔧 Performance Testing Details</summary>
+            
+            - **Test Suite**: Lighthouse CI + Playwright
+            - **Scenarios**: Desktop, Mobile, Mobile 3G
+            - **Thresholds**: Performance ≥90, Accessibility ≥95, Best Practices ≥90, SEO ≥95
+            - **Generated**: ${new Date().toISOString()}
+            </details>`;
+            
+            if (existingComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existingComment.id,
+                body: commentBody
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: commentBody
+              });
+            }
+          } catch (error) {
+            console.error('Failed to comment on PR:', error);
+          }
+
+  performance-regression:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout PR code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build and test PR
+      run: |
+        npm run build
+        npm start &
+        sleep 10
+        npm run lighthouse:ci
+        
+    - name: Download baseline
+      uses: dawidd6/action-download-artifact@v3
+      continue-on-error: true
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        workflow: performance.yml
+        branch: main
+        name: lighthouse-reports
+        path: baseline-reports/
+        
+    - name: Compare performance
+      run: |
+        node -e "
+        const fs = require('fs');
+        const path = require('path');
+        
+        try {
+          const currentReport = JSON.parse(fs.readFileSync('lighthouse-reports/lighthouse-ci.json'));
+          const baselineReport = JSON.parse(fs.readFileSync('baseline-reports/lighthouse-ci.json'));
+          
+          console.log('🔍 Performance Regression Analysis');
+          console.log('='.repeat(50));
+          
+          let hasRegression = false;
+          
+          for (let i = 0; i < currentReport.scenarios.length; i++) {
+            const current = currentReport.scenarios[i];
+            const baseline = baselineReport.scenarios[i];
+            
+            if (!baseline) continue;
+            
+            console.log(\`📊 Scenario: \${current.name}\`);
+            
+            const perfDiff = current.scores.performance - baseline.scores.performance;
+            const a11yDiff = current.scores.accessibility - baseline.scores.accessibility;
+            
+            if (perfDiff < -5) {
+              console.log(\`❌ Performance regression: \${perfDiff} points\`);
+              hasRegression = true;
+            } else if (perfDiff > 5) {
+              console.log(\`✅ Performance improvement: +\${perfDiff} points\`);
+            } else {
+              console.log(\`➖ Performance stable: \${perfDiff} points\`);
+            }
+            
+            if (a11yDiff < 0) {
+              console.log(\`❌ Accessibility regression: \${a11yDiff} points\`);
+              hasRegression = true;
+            } else {
+              console.log(\`✅ Accessibility stable/improved: \${a11yDiff} points\`);
+            }
+            
+            console.log('');
+          }
+          
+          if (hasRegression) {
+            console.log('🚨 Performance regression detected!');
+            process.exit(1);
+          } else {
+            console.log('✅ No significant performance regression detected');
+          }
+          
+        } catch (error) {
+          console.log('⚠️ Could not compare with baseline (first run?)');
+          console.log('Creating new baseline for future comparisons');
+        }
+        "
+
+  bundle-analysis:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Analyze bundle
+      run: npm run analyze
+      
+    - name: Upload bundle analysis
+      uses: actions/upload-artifact@v4
+      with:
+        name: bundle-analysis
+        path: |
+          .next/analyze/
+          .next/static/
+        retention-days: 30

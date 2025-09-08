@@ -1,0 +1,38 @@
+{
+  "name": "bmad-method-framework",
+  "version": "1.0.0",
+  "description": "BMAD-METHOD implementation for systematic AI-driven development",
+  "main": "tools/project-init.js",
+  "scripts": {
+    "init": "node tools/project-init.js",
+    "validate": "node tools/validate-project.js",
+    "list-projects": "ls -la projects/",
+    "agent": "node tools/agent-runner.js",
+    "workflow": "node tools/workflow-orchestrator.js",
+    "flatten": "node tools/context-flattener.js",
+    "collaborate": "node tools/agent-collaboration.js",
+    "bmad": "./bmad",
+    "help": "echo 'BMAD-METHOD Commands:\\n  npm run init     - Initialize new project\\n  npm run validate - Validate project structure\\n  npm run workflow - Run complete workflow\\n  npm run agent    - Run specific agent\\n  npm run flatten  - Flatten project context\\n  npm run list     - List all projects\\n  ./bmad help      - Show CLI help'"
+  },
+  "bin": {
+    "bmad": "./bmad"
+  },
+  "keywords": [
+    "bmad-method",
+    "agentic-planning", 
+    "context-engineering",
+    "ai-development",
+    "systematic-development"
+  ],
+  "author": "My-Apps Ecosystem",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "local"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

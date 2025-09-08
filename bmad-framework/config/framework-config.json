@@ -1,0 +1,65 @@
+{
+  "framework": {
+    "name": "BMAD-METHOD Implementation",
+    "version": "1.0.0",
+    "description": "Systematic AI-driven development framework for my-apps ecosystem"
+  },
+  "agents": {
+    "analyst": {
+      "role": "Requirements and domain analysis",
+      "priority": 1,
+      "outputs": ["requirements-analysis.md", "domain-research.md"],
+      "dependencies": []
+    },
+    "pm": {
+      "role": "Project management and planning",
+      "priority": 2,
+      "outputs": ["project-plan.md", "timeline.md", "risk-assessment.md"],
+      "dependencies": ["analyst"]
+    },
+    "architect": {
+      "role": "Technical architecture and design",
+      "priority": 3,
+      "outputs": ["technical-architecture.md", "api-design.md", "tech-stack.md"],
+      "dependencies": ["analyst", "pm"]
+    },
+    "scrum-master": {
+      "role": "Development story creation",
+      "priority": 4,
+      "outputs": ["user-stories.md", "acceptance-criteria.md", "implementation-context.md"],
+      "dependencies": ["analyst", "pm", "architect"]
+    }
+  },
+  "templates": {
+    "planning": {
+      "project-initialization": "templates/planning/project-initialization.md"
+    },
+    "stories": {
+      "user-story": "templates/stories/user-story-template.md"
+    }
+  },
+  "tools": {
+    "project-init": "tools/project-init.js",
+    "agent-runner": "tools/agent-runner.js",
+    "context-flattener": "tools/context-flattener.js"
+  },
+  "integration": {
+    "my-apps-ecosystem": {
+      "hive": "Test generation integration",
+      "spider": "Pattern discovery integration", 
+      "tis": "Intelligence storage integration",
+      "analyzer-kit": "Health monitoring integration"
+    },
+    "claude-api": {
+      "enabled": true,
+      "model": "claude-3-sonnet",
+      "context-engineering": true
+    }
+  },
+  "workflow": {
+    "phase-1": "Agentic Planning (Analyst → PM → Architect)",
+    "phase-2": "Context-Engineered Development (Scrum Master → Implementation)",
+    "validation": "Cross-agent consistency checks",
+    "output": "Developer-ready implementation stories"
+  }
+}

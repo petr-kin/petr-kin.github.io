@@ -1,0 +1,32 @@
+[
+  {
+    "id": "tools",
+    "question": "What tools and technologies do you use?",
+    "answer": "I specialize in modern QA and development tools: Playwright and Cypress for test automation, TypeScript and React for frontend development, Next.js and Tailwind CSS for full-stack applications, and CI/CD with GitHub Actions and Netlify. For AI integration, I work with various APIs and build custom automation solutions."
+  },
+  {
+    "id": "automation",
+    "question": "Do you do test automation consulting?",
+    "answer": "Yes! I help teams build stable, maintainable test suites with intelligent healing patterns. My approach focuses on reducing maintenance overhead while maximizing coverage. I've achieved 95% autonomous healing for common test failures and can help your team implement similar solutions."
+  },
+  {
+    "id": "ai-integration",
+    "question": "How do you integrate AI into QA processes?",
+    "answer": "I build AI-enhanced testing tools that learn from failure patterns and automatically suggest or implement fixes. This includes selector healing, test data generation, and intelligent test prioritization. My Playwright Test Doctor system has reduced test maintenance by 60% through pattern recognition."
+  },
+  {
+    "id": "performance",
+    "question": "What's your approach to performance testing?",
+    "answer": "I focus on Core Web Vitals and real-world performance metrics. My testing suites include automated Lighthouse audits, bundle analysis, and user journey performance tracking. I ensure applications meet accessibility standards while maintaining excellent performance scores."
+  },
+  {
+    "id": "remote-work",
+    "question": "Do you work remotely?",
+    "answer": "Absolutely! I'm based in České Budějovice, Czech Republic, and work effectively with teams across different time zones. I have experience with distributed teams and use modern collaboration tools to ensure smooth communication and delivery."
+  },
+  {
+    "id": "project-duration",
+    "question": "What's your typical project duration?",
+    "answer": "Project timelines vary based on scope. Quick automation setups can take 1-2 weeks, while comprehensive testing frameworks typically require 4-8 weeks. I provide detailed project plans with milestones and regular progress updates throughout development."
+  }
+]

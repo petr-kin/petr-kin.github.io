@@ -1,0 +1,108 @@
+[
+  {
+    "slug": "cnc-shadow-monitoring",
+    "title": "CNC Shadow Monitoring Suite",
+    "summary": "Cross-site Playwright monitor with consent handling, SEO checks, and Slack reports. Automated 95% of regression testing with intelligent selector healing and performance tracking.",
+    "tags": ["Playwright", "TypeScript", "CI/CD", "Slack"],
+    "media": "/api/placeholder/400/225",
+    "mediaType": "image",
+    "metrics": {
+      "coverage": "95%",
+      "sites": "12",
+      "checks": "500+"
+    },
+    "links": {
+      "docs": "#cnc-docs",
+      "demo": "#cnc-demo"
+    },
+    "featured": true
+  },
+  {
+    "slug": "playwright-test-doctor",
+    "title": "Playwright Test Doctor",
+    "summary": "AI-powered test healing system that detects failing selectors and generates replacement strategies. Reduces test maintenance by 60% with autonomous pattern recognition.",
+    "tags": ["AI", "Playwright", "TypeScript", "Test Automation"],
+    "media": "/api/placeholder/400/225",
+    "mediaType": "image",
+    "metrics": {
+      "healing": "95%",
+      "timeSaved": "60%",
+      "testsFixed": "3.5K+"
+    },
+    "links": {
+      "code": "#test-doctor-code",
+      "docs": "#test-doctor-docs"
+    },
+    "featured": true
+  },
+  {
+    "slug": "ramenator",
+    "title": "Ramenator — AI Ramen Recipes",
+    "summary": "React app with ingredient recognition and AI recipe suggestions. Features modern UI with smooth animations and intelligent meal planning recommendations.",
+    "tags": ["React", "AI", "UX", "Food Tech"],
+    "media": "/api/placeholder/400/225",
+    "mediaType": "image",
+    "metrics": {
+      "recipes": "500+",
+      "users": "2K+",
+      "rating": "4.9"
+    },
+    "links": {
+      "demo": "#ramenator-demo",
+      "code": "#ramenator-code"
+    },
+    "featured": true
+  },
+  {
+    "slug": "qa-intelligence-suite",
+    "title": "QA Intelligence Suite",
+    "summary": "20-analyzer testing platform for repository health, test coverage, performance bottlenecks, and migration risk assessment with comprehensive dashboards.",
+    "tags": ["Python", "TypeScript", "DevOps"],
+    "media": "/media/qa-suite.mp4",
+    "mediaType": "video",
+    "metrics": {
+      "analyzers": "20",
+      "repos": "50+",
+      "insights": "1K+"
+    },
+    "links": {
+      "docs": "#qa-suite-docs"
+    },
+    "featured": false
+  },
+  {
+    "slug": "test-strategy-optimizer",
+    "title": "Test Strategy Optimizer",
+    "summary": "4-pillar testing framework with health monitoring, intelligence analysis, strategy optimization, and automated training modules for team efficiency.",
+    "tags": ["TypeScript", "Test Orchestration", "Training"],
+    "media": "/media/strategy-optimizer.mp4",
+    "mediaType": "video",
+    "metrics": {
+      "pillars": "4",
+      "efficiency": "80%",
+      "modules": "12"
+    },
+    "links": {
+      "docs": "#strategy-optimizer-docs"
+    },
+    "featured": false
+  },
+  {
+    "slug": "crawler-debug-agent",
+    "title": "Crawler Debug Agent",
+    "summary": "Contract-based crawler with golden rules for fast, stable crawling. Uses lightweight BFS with budget controls and consent sweeping for Czech news sites.",
+    "tags": ["TypeScript", "Web Crawling", "Consent"],
+    "media": "/media/crawler-agent.mp4",
+    "mediaType": "video",
+    "metrics": {
+      "speed": "2.5s",
+      "stability": "99%",
+      "sites": "8"
+    },
+    "links": {
+      "code": "#crawler-agent-code",
+      "docs": "#crawler-agent-docs"
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,276 @@
+@import "tailwindcss";
+
+/* Root CSS Variables - Clean Version */
+@layer base {
+  :root {
+    /* Core theme colors */
+    --background: 30 8% 96%; /* Alpine Oat #F5F3F0 */
+    --foreground: 212 64% 18%; /* Midnight Blue #112D4E */
+    --card: 0 0% 100%; /* Pure white for cards */
+    --card-foreground: 212 64% 18%; /* Midnight Blue text */
+    --popover: 0 0% 100%;
+    --popover-foreground: 212 64% 18%;
+    --primary: 204 87% 42%; /* True Blue #137DC5 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 50 95% 60%; /* Sunny Yellow #FACF39 */
+    --secondary-foreground: 212 64% 18%;
+    --muted: 30 12% 92%; /* Lighter Alpine Oat */
+    --muted-foreground: 212 30% 35%; /* Lighter Midnight Blue */
+    --accent: 50 95% 60%; /* Sunny Yellow accent */
+    --accent-foreground: 212 64% 18%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 15% 85%; /* Warm neutral border */
+    --input: 30 15% 85%;
+    --ring: 204 87% 42%; /* True Blue focus ring */
+    --radius: 1rem;
+
+    /* Custom color palette */
+    --color-aqua-50: 191 219 254;
+    --color-aqua-100: 147 197 253;
+    --color-aqua-200: 125 211 252;
+    --color-aqua-300: 103 232 249;
+    --color-aqua-400: 34 211 238;
+    --color-aqua-500: 6 182 212;
+    --color-aqua-600: 8 145 178;
+    --color-aqua-700: 14 116 144;
+    --color-midnight: 212 64 18;
+    --color-midnight-300: 212 40 35;
+    --color-true-blue: 204 87 42;
+    --color-true-blue-600: 204 87 35;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 6%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 6%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 206 83% 55%;
+    --primary-foreground: 215 28% 17%;
+    --secondary: 215 20% 25%;
+    --secondary-foreground: 202 100% 97%;
+    --muted: 215 20% 25%;
+    --muted-foreground: 213 15% 70%;
+    --accent: 215 20% 25%;
+    --accent-foreground: 202 100% 97%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 20% 25%;
+    --input: 215 20% 25%;
+    --ring: 206 83% 55%;
+  }
+}
+
+/* Mobile-first responsive overrides */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Prevent horizontal scroll on mobile */
+.container, .max-w-6xl, .max-w-4xl {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container, .max-w-6xl, .max-w-4xl {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Mobile text scaling and overflow prevention */
+@media (max-width: 767px) {
+  .text-5xl, .text-6xl, .text-7xl {
+    font-size: clamp(2.5rem, 8vw, 4rem) !important;
+    line-height: 1.1;
+  }
+  
+  .text-4xl {
+    font-size: clamp(2rem, 6vw, 3rem) !important;
+  }
+  
+  .text-3xl {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+  }
+  
+  .text-2xl {
+    font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
+  }
+  
+  /* Prevent long words from breaking layout */
+  .whitespace-nowrap {
+    white-space: normal !important;
+    word-break: break-word;
+  }
+  
+  /* Mobile-optimized padding */
+  .px-6 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .px-8 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  /* Touch targets should be at least 44px */
+  button, .button, a[href] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Reduce animation intensity on mobile */
+  .animate-marquee {
+    animation-duration: 30s;
+  }
+  
+  /* Disable complex animations for better performance */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee,
+    .animate-pulse,
+    .animate-spin,
+    .animate-bounce {
+      animation: none !important;
+    }
+    
+    * {
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Marquee animation for tech stack ticker */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Performance-optimized floating animations */
+@keyframes float-slow {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px);
+  }
+  50% { 
+    transform: translateY(-20px) translateX(10px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% { 
+    transform: translateY(15px) translateX(-8px) rotate(2deg);
+  }
+  66% { 
+    transform: translateY(-10px) translateX(12px) rotate(-1deg);
+  }
+}
+
+/* GPU-accelerated utility classes */
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 8s ease-in-out infinite;
+}
+
+/* GPU acceleration utilities */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Will-change utilities for better performance */
+.will-change-transform { 
+  will-change: transform; 
+}
+
+.will-change-opacity { 
+  will-change: opacity; 
+}
+
+.will-change-auto { 
+  will-change: auto; 
+}
+
+/* Skip Navigation Styles */
+.skip-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.skip-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skip-nav-link {
+  position: absolute;
+  left: -9999px;
+  top: 4px;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease-in-out;
+}
+
+.skip-nav-link:focus {
+  left: 4px;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.skip-nav-link:hover:focus {
+  background: #333;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .skip-nav-link {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .skip-nav-link {
+    background: #000;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  
+  .skip-nav-link:focus {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}

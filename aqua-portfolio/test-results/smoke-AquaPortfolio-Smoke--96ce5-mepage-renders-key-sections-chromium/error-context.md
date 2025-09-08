@@ -1,0 +1,359 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation "Skip navigation":
+    - list:
+      - listitem:
+        - link "Skip to main content" [ref=e2] [cursor=pointer]:
+          - /url: "#main-content"
+      - listitem:
+        - link "Skip to navigation" [ref=e3] [cursor=pointer]:
+          - /url: "#navigation"
+      - listitem:
+        - link "Skip to footer" [ref=e4] [cursor=pointer]:
+          - /url: "#footer"
+  - generic [ref=e5]:
+    - banner [ref=e13]:
+      - navigation [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16] [cursor=pointer]:
+            - generic [ref=e18] [cursor=pointer]: PK
+            - generic [ref=e19] [cursor=pointer]: QA Engineer
+          - generic [ref=e20]:
+            - link "Home" [ref=e21] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e22] [cursor=pointer]: Home
+            - link "Expertise" [ref=e23] [cursor=pointer]:
+              - /url: /expertise
+              - generic [ref=e24] [cursor=pointer]: Expertise
+            - link "Case Studies" [ref=e25] [cursor=pointer]:
+              - /url: /case-studies
+              - generic [ref=e26] [cursor=pointer]: Case Studies
+            - link "Blog" [ref=e27] [cursor=pointer]:
+              - /url: /blog
+              - generic [ref=e28] [cursor=pointer]: Blog
+            - link "Contact" [ref=e29] [cursor=pointer]:
+              - /url: /#contact
+              - generic [ref=e30] [cursor=pointer]: Contact
+          - link "Let's Talk" [ref=e31] [cursor=pointer]:
+            - /url: /#contact
+            - img [ref=e32] [cursor=pointer]
+            - text: Let's Talk
+    - main [ref=e34]:
+      - region "Hero section" [ref=e36]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - generic [ref=e45]: Test Intelligence Engineer
+              - heading "PETR KINDLMANN QA" [level=1] [ref=e46]:
+                - generic [ref=e47]: PETR
+                - generic [ref=e48]: KINDLMANN
+                - generic: QA
+              - generic [ref=e49]:
+                - paragraph [ref=e50]:
+                  - text: Where
+                  - generic [ref=e51]: AI meets QA
+                - paragraph [ref=e52]: Building self-healing test frameworks that learn from failures and reduce maintenance by 60%
+              - generic [ref=e53]:
+                - generic [ref=e54] [cursor=pointer]:
+                  - generic [ref=e55] [cursor=pointer]: 95%
+                  - generic [ref=e56] [cursor=pointer]: Test Healing Rate
+                - generic [ref=e57] [cursor=pointer]:
+                  - generic [ref=e58] [cursor=pointer]: 60%
+                  - generic [ref=e59] [cursor=pointer]: Less Maintenance
+                - generic [ref=e60] [cursor=pointer]:
+                  - generic [ref=e61] [cursor=pointer]: 3.5K+
+                  - generic [ref=e62] [cursor=pointer]: Tests Automated
+              - generic [ref=e63]:
+                - button "View case studies" [ref=e64]:
+                  - generic [ref=e65]:
+                    - text: View Case Studies
+                    - img [ref=e66]
+                - button "Download Resume" [ref=e69]:
+                  - generic [ref=e70]:
+                    - img [ref=e71]
+                    - text: Download Resume
+            - generic [ref=e75]:
+              - generic [ref=e77]:
+                - generic [ref=e78]:
+                  - img [ref=e80]
+                  - heading "AI-Powered Testing" [level=3] [ref=e89]
+                  - paragraph [ref=e90]: Intelligent test healing with pattern recognition
+                - generic [ref=e93]: Live healing active
+              - img [ref=e95]
+          - img "Scroll down to explore more content" [ref=e106]:
+            - generic [ref=e107]: Scroll to explore
+            - img [ref=e108]
+      - img [ref=e111]
+      - generic [ref=e116]:
+        - paragraph [ref=e118]: Core Technologies & Expertise
+        - generic [ref=e121]:
+          - generic [ref=e122]: Playwright
+          - generic [ref=e123]: TypeScript
+          - generic [ref=e124]: React
+          - generic [ref=e125]: Next.js
+          - generic [ref=e126]: Tailwind CSS
+          - generic [ref=e127]: Test Automation
+          - generic [ref=e128]: QA Engineering
+          - generic [ref=e129]: CI/CD
+          - generic [ref=e130]: Performance Testing
+          - generic [ref=e131]: AI Integration
+          - generic [ref=e132]: Playwright
+          - generic [ref=e133]: TypeScript
+          - generic [ref=e134]: React
+          - generic [ref=e135]: Next.js
+          - generic [ref=e136]: Tailwind CSS
+          - generic [ref=e137]: Test Automation
+          - generic [ref=e138]: QA Engineering
+          - generic [ref=e139]: CI/CD
+          - generic [ref=e140]: Performance Testing
+          - generic [ref=e141]: AI Integration
+      - img [ref=e143]
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - generic [ref=e151]: Featured Work
+          - heading "Featured Projects" [level=2] [ref=e153]
+          - paragraph [ref=e154]: Real-world solutions that demonstrate the intersection of testing excellence, AI innovation, and business impact
+        - generic [ref=e155]:
+          - generic [ref=e157]:
+            - generic [ref=e159]:
+              - img [ref=e160]
+              - text: FEATURED
+            - generic [ref=e163]:
+              - img "CNC Shadow Monitoring Suite" [ref=e166]
+              - generic [ref=e168]:
+                - heading "CNC Shadow Monitoring Suite" [level=3] [ref=e169]:
+                  - generic [ref=e170]: CNC Shadow Monitoring Suite
+                  - img [ref=e172]
+                - paragraph [ref=e175]: Cross-site Playwright monitor with consent handling, SEO checks, and Slack reports. Automated 95% of regression testing with intelligent selector healing and performance tracking.
+                - generic [ref=e176]:
+                  - generic [ref=e177]:
+                    - generic [ref=e178]: 95%
+                    - generic [ref=e179]: coverage
+                  - generic [ref=e180]:
+                    - generic [ref=e181]: "12"
+                    - generic [ref=e182]: sites
+                  - generic [ref=e183]:
+                    - generic [ref=e184]: 500+
+                    - generic [ref=e185]: checks
+                - generic [ref=e186]:
+                  - generic [ref=e187]: Playwright
+                  - generic [ref=e188]: TypeScript
+                  - generic [ref=e189]: CI/CD
+                  - generic [ref=e190]: Slack
+                - generic [ref=e191]:
+                  - button "Case Study" [ref=e192]:
+                    - img [ref=e193]
+                    - text: Case Study
+                  - link [ref=e196] [cursor=pointer]:
+                    - /url: "#cnc-demo"
+                    - img [ref=e197] [cursor=pointer]
+          - generic [ref=e202]:
+            - generic [ref=e204]:
+              - img [ref=e205]
+              - text: FEATURED
+            - generic [ref=e208]:
+              - img "Playwright Test Doctor" [ref=e211]
+              - generic [ref=e213]:
+                - heading "Playwright Test Doctor" [level=3] [ref=e214]:
+                  - generic [ref=e215]: Playwright Test Doctor
+                  - img [ref=e217]
+                - paragraph [ref=e220]: AI-powered test healing system that detects failing selectors and generates replacement strategies. Reduces test maintenance by 60% with autonomous pattern recognition.
+                - generic [ref=e221]:
+                  - generic [ref=e222]:
+                    - generic [ref=e223]: 95%
+                    - generic [ref=e224]: healing
+                  - generic [ref=e225]:
+                    - generic [ref=e226]: 60%
+                    - generic [ref=e227]: time Saved
+                  - generic [ref=e228]:
+                    - generic [ref=e229]: 3.5K+
+                    - generic [ref=e230]: tests Fixed
+                - generic [ref=e231]:
+                  - generic [ref=e232]: AI
+                  - generic [ref=e233]: Playwright
+                  - generic [ref=e234]: TypeScript
+                  - generic [ref=e235]: Test Automation
+                - generic [ref=e236]:
+                  - button "Case Study" [ref=e237]:
+                    - img [ref=e238]
+                    - text: Case Study
+                  - link [ref=e241] [cursor=pointer]:
+                    - /url: "#test-doctor-code"
+                    - img [ref=e242] [cursor=pointer]
+          - generic [ref=e246]:
+            - generic [ref=e248]:
+              - img [ref=e249]
+              - text: FEATURED
+            - generic [ref=e252]:
+              - img "Ramenator — AI Ramen Recipes" [ref=e255]
+              - generic [ref=e257]:
+                - heading "Ramenator — AI Ramen Recipes" [level=3] [ref=e258]:
+                  - generic [ref=e259]: Ramenator — AI Ramen Recipes
+                  - img [ref=e261]
+                - paragraph [ref=e264]: React app with ingredient recognition and AI recipe suggestions. Features modern UI with smooth animations and intelligent meal planning recommendations.
+                - generic [ref=e265]:
+                  - generic [ref=e266]:
+                    - generic [ref=e267]: 500+
+                    - generic [ref=e268]: recipes
+                  - generic [ref=e269]:
+                    - generic [ref=e270]: 2K+
+                    - generic [ref=e271]: users
+                  - generic [ref=e272]:
+                    - generic [ref=e273]: "4.9"
+                    - generic [ref=e274]: rating
+                - generic [ref=e275]:
+                  - generic [ref=e276]: React
+                  - generic [ref=e277]: AI
+                  - generic [ref=e278]: UX
+                  - generic [ref=e279]: Food Tech
+                - generic [ref=e280]:
+                  - button "Case Study" [ref=e281]:
+                    - img [ref=e282]
+                    - text: Case Study
+                  - link [ref=e285] [cursor=pointer]:
+                    - /url: "#ramenator-code"
+                    - img [ref=e286] [cursor=pointer]
+                  - link [ref=e289] [cursor=pointer]:
+                    - /url: "#ramenator-demo"
+                    - img [ref=e290] [cursor=pointer]
+        - button "View All Projects" [ref=e296]:
+          - text: View All Projects
+          - img [ref=e297]
+      - img [ref=e300]
+      - generic [ref=e304]:
+        - generic [ref=e305]:
+          - heading "Explore My QA Expertise" [level=2] [ref=e306]
+          - paragraph [ref=e307]: Dive deeper into comprehensive testing capabilities, real-world case studies, and practical insights from enterprise QA implementations.
+        - generic [ref=e308]:
+          - link "Technical Expertise Interactive demos, testing comparisons, automation frameworks, and comprehensive QA capabilities showcase. Explore Capabilities" [ref=e309] [cursor=pointer]:
+            - /url: /expertise
+            - generic [ref=e310] [cursor=pointer]:
+              - img [ref=e312] [cursor=pointer]
+              - heading "Technical Expertise" [level=3] [ref=e314] [cursor=pointer]
+              - paragraph [ref=e315] [cursor=pointer]: Interactive demos, testing comparisons, automation frameworks, and comprehensive QA capabilities showcase.
+              - generic [ref=e316] [cursor=pointer]:
+                - text: Explore Capabilities
+                - img [ref=e317] [cursor=pointer]
+          - link "Case Studies Detailed project breakdowns with measurable results, challenges solved, and strategic implementations. View Projects" [ref=e319] [cursor=pointer]:
+            - /url: /case-studies
+            - generic [ref=e320] [cursor=pointer]:
+              - img [ref=e322] [cursor=pointer]
+              - heading "Case Studies" [level=3] [ref=e324] [cursor=pointer]
+              - paragraph [ref=e325] [cursor=pointer]: Detailed project breakdowns with measurable results, challenges solved, and strategic implementations.
+              - generic [ref=e326] [cursor=pointer]:
+                - text: View Projects
+                - img [ref=e327] [cursor=pointer]
+          - link "QA Insights Blog Practical insights, best practices, and lessons learned from 4+ years of QA automation experience. Read Articles" [ref=e329] [cursor=pointer]:
+            - /url: /blog
+            - generic [ref=e330] [cursor=pointer]:
+              - img [ref=e332] [cursor=pointer]
+              - heading "QA Insights Blog" [level=3] [ref=e334] [cursor=pointer]
+              - paragraph [ref=e335] [cursor=pointer]: Practical insights, best practices, and lessons learned from 4+ years of QA automation experience.
+              - generic [ref=e336] [cursor=pointer]:
+                - text: Read Articles
+                - img [ref=e337] [cursor=pointer]
+      - img [ref=e340]
+      - generic [ref=e343]:
+        - generic [ref=e344]:
+          - generic [ref=e345]: Common Questions
+          - heading "Frequently Asked Questions" [level=2] [ref=e347]
+          - paragraph [ref=e348]: Everything you need to know about working with me on your testing and automation projects.
+        - generic [ref=e350]:
+          - heading "What tools and technologies do you use?" [level=3] [ref=e353]:
+            - button "What tools and technologies do you use?" [ref=e354]:
+              - generic [ref=e355]: What tools and technologies do you use?
+              - img
+          - heading "Do you do test automation consulting?" [level=3] [ref=e358]:
+            - button "Do you do test automation consulting?" [ref=e359]:
+              - generic [ref=e360]: Do you do test automation consulting?
+              - img
+          - heading "How do you integrate AI into QA processes?" [level=3] [ref=e363]:
+            - button "How do you integrate AI into QA processes?" [ref=e364]:
+              - generic [ref=e365]: How do you integrate AI into QA processes?
+              - img
+          - heading "What's your approach to performance testing?" [level=3] [ref=e368]:
+            - button "What's your approach to performance testing?" [ref=e369]:
+              - generic [ref=e370]: What's your approach to performance testing?
+              - img
+          - heading "Do you work remotely?" [level=3] [ref=e373]:
+            - button "Do you work remotely?" [ref=e374]:
+              - generic [ref=e375]: Do you work remotely?
+              - img
+          - heading "What's your typical project duration?" [level=3] [ref=e378]:
+            - button "What's your typical project duration?" [ref=e379]:
+              - generic [ref=e380]: What's your typical project duration?
+              - img
+        - generic [ref=e381]:
+          - paragraph [ref=e382]: Have a specific question about your project?
+          - link "Get in Touch" [ref=e383] [cursor=pointer]:
+            - /url: "#contact"
+            - text: Get in Touch
+            - img [ref=e384] [cursor=pointer]
+      - generic [ref=e387]:
+        - generic [ref=e388]:
+          - generic [ref=e389]: Let's Connect
+          - heading "Ready to Build Something Great?" [level=2] [ref=e391]
+          - paragraph [ref=e392]: Available for test automation projects, QA consulting, and full-stack development. Let's discuss how we can improve your software quality together.
+        - generic [ref=e393]:
+          - generic [ref=e394]:
+            - generic [ref=e395]:
+              - generic [ref=e399]:
+                - img [ref=e401]
+                - generic [ref=e404]:
+                  - paragraph [ref=e405]: Email
+                  - link "thepetr@gmail.com" [ref=e406] [cursor=pointer]:
+                    - /url: mailto:thepetr@gmail.com
+                - img [ref=e407]
+              - generic [ref=e414]:
+                - img [ref=e416]
+                - generic [ref=e419]:
+                  - paragraph [ref=e420]: Location
+                  - paragraph [ref=e421]: České Budějovice, Czech Republic
+              - generic [ref=e425]:
+                - img [ref=e427]
+                - generic [ref=e429]:
+                  - paragraph [ref=e430]: Timezone
+                  - paragraph [ref=e431]: CET (UTC+1)
+            - generic [ref=e432]:
+              - paragraph [ref=e433]: "Connect with me on social platforms:"
+              - generic [ref=e434]:
+                - link "LI" [ref=e435] [cursor=pointer]:
+                  - /url: "#linkedin"
+                - link "GH" [ref=e436] [cursor=pointer]:
+                  - /url: "#github"
+                - link "TW" [ref=e437] [cursor=pointer]:
+                  - /url: "#twitter"
+                - link "CV" [ref=e438] [cursor=pointer]:
+                  - /url: /Petr-Resume.pdf
+          - generic [ref=e441]:
+            - generic [ref=e442]:
+              - heading "Start Your Project" [level=3] [ref=e443]
+              - paragraph [ref=e444]: Whether you need comprehensive test automation, performance optimization, or full-stack development with built-in quality assurance, I'm here to help.
+            - generic [ref=e445]:
+              - link "Send Project Inquiry" [ref=e446] [cursor=pointer]:
+                - /url: "mailto:thepetr@gmail.com?subject=Project Inquiry&body=Hi Petr,%0A%0AI'd like to discuss a project with you.%0A%0AProject type: [QA Automation / Full-stack Development / Consulting]%0ATimeline: %0ABudget range: %0A%0AProject details:%0A"
+                - img
+                - text: Send Project Inquiry
+              - link "Schedule a Call" [ref=e447] [cursor=pointer]:
+                - /url: "mailto:thepetr@gmail.com?subject=Quick Chat Request&body=Hi Petr,%0A%0AI'd like to schedule a quick call to discuss potential collaboration.%0A%0APreferred time: %0ATimezone: %0ATopic: %0A"
+                - img
+                - text: Schedule a Call
+            - paragraph [ref=e449]: 💬 Typically responds within 24 hours
+    - contentinfo [ref=e450]:
+      - generic [ref=e452]:
+        - generic [ref=e453]:
+          - link "GH" [ref=e454] [cursor=pointer]:
+            - /url: "#"
+          - link "LI" [ref=e455] [cursor=pointer]:
+            - /url: "#"
+          - link "TW" [ref=e456] [cursor=pointer]:
+            - /url: "#"
+          - link "CV" [ref=e457] [cursor=pointer]:
+            - /url: "#"
+        - paragraph [ref=e458]: © 2025 Petr Kindlmann. QA-minded developer building fast, beautiful, and reliable web apps with AI.
+  - button "Open Next.js Dev Tools" [ref=e464] [cursor=pointer]:
+    - img [ref=e465] [cursor=pointer]
+  - alert [ref=e468]
+```

@@ -1,0 +1,184 @@
+[
+  {
+    "id": "playwright-doctor",
+    "slug": "playwright-test-doctor",
+    "title": "Playwright Test Doctor: AI-Powered Test Healing",
+    "subtitle": "Reducing test maintenance overhead by 60% through intelligent selector healing",
+    "category": "Test Automation",
+    "duration": "6 months",
+    "team": "Solo project",
+    "technologies": ["TypeScript", "Playwright", "OpenAI API", "Node.js", "AST Parsing"],
+    "overview": "An AI-powered system that automatically detects and heals failing Playwright tests by analyzing DOM changes and generating replacement selector strategies.",
+    "challenge": "Test maintenance was consuming 40% of QA team time due to frequent UI changes breaking selectors. Manual selector updates were reactive, time-consuming, and error-prone.",
+    "solution": "Built an intelligent healing system that monitors test failures, analyzes DOM structure changes, and automatically generates robust selector alternatives using AI-powered analysis.",
+    "results": [
+      {
+        "metric": "Test Maintenance Time",
+        "before": "16 hours/week",
+        "after": "6.4 hours/week",
+        "improvement": "60% reduction"
+      },
+      {
+        "metric": "Test Stability",
+        "before": "73% pass rate",
+        "after": "94% pass rate",
+        "improvement": "21% increase"
+      },
+      {
+        "metric": "Mean Time to Recovery",
+        "before": "4.2 hours",
+        "after": "12 minutes",
+        "improvement": "95% faster"
+      }
+    ],
+    "keyFeatures": [
+      "Automatic failure detection and categorization",
+      "DOM diff analysis for selector breakage root cause",
+      "AI-powered selector strategy generation",
+      "Confidence scoring for selector alternatives",
+      "Integration with existing CI/CD pipelines",
+      "Detailed healing reports and analytics"
+    ],
+    "technicalDetails": {
+      "architecture": "Event-driven microservices with async healing pipeline",
+      "aiModel": "GPT-4 for semantic DOM analysis and selector generation",
+      "scalability": "Handles 500+ tests per healing cycle",
+      "integration": "Jenkins, GitHub Actions, TeamCity compatible"
+    },
+    "lessonsLearned": [
+      "AI-generated selectors need human review for edge cases",
+      "DOM structure patterns are more predictable than expected",
+      "Confidence scoring is crucial for automated deployment",
+      "Real-time healing reduces developer context switching"
+    ],
+    "futureEnhancements": [
+      "Visual regression detection integration",
+      "Cross-browser selector optimization",
+      "Machine learning model training on project-specific patterns"
+    ]
+  },
+  {
+    "id": "qa-intelligence-suite",
+    "slug": "qa-intelligence-suite",
+    "title": "QA Intelligence Suite: 20-Analyzer Testing Platform",
+    "subtitle": "Comprehensive repository health and quality assessment system",
+    "category": "Test Strategy",
+    "duration": "8 months",
+    "team": "3 developers + 1 QA lead",
+    "technologies": ["Python", "TypeScript", "FastAPI", "React", "PostgreSQL", "Docker"],
+    "overview": "A comprehensive testing intelligence platform with 20 specialized analyzers for repository health, test coverage, performance bottlenecks, and migration risk assessment.",
+    "challenge": "Development teams lacked visibility into code quality, test coverage gaps, and technical debt. Manual code reviews missed systematic issues, leading to production problems.",
+    "solution": "Built a multi-analyzer platform that automatically scans repositories, identifies quality issues, and provides actionable recommendations with risk scoring.",
+    "results": [
+      {
+        "metric": "Bug Detection",
+        "before": "Post-production",
+        "after": "Pre-commit",
+        "improvement": "85% earlier"
+      },
+      {
+        "metric": "Code Coverage",
+        "before": "67% average",
+        "after": "89% average",
+        "improvement": "22% increase"
+      },
+      {
+        "metric": "Technical Debt",
+        "before": "Unknown metrics",
+        "after": "Quantified & tracked",
+        "improvement": "Full visibility"
+      }
+    ],
+    "analyzers": [
+      {
+        "name": "Test Coverage Analyzer",
+        "purpose": "Identifies uncovered code paths and critical gaps"
+      },
+      {
+        "name": "Performance Bottleneck Scanner",
+        "purpose": "Detects slow queries, memory leaks, and inefficient algorithms"
+      },
+      {
+        "name": "Security Vulnerability Checker",
+        "purpose": "Scans for OWASP Top 10 and dependency vulnerabilities"
+      },
+      {
+        "name": "Code Complexity Meter",
+        "purpose": "Measures cyclomatic complexity and maintainability"
+      },
+      {
+        "name": "Migration Risk Assessor",
+        "purpose": "Evaluates upgrade compatibility and breaking changes"
+      }
+    ],
+    "keyFeatures": [
+      "20 specialized analyzers covering all quality dimensions",
+      "Risk-based prioritization with scoring algorithms",
+      "Integration with 15+ version control systems",
+      "Customizable quality gates and thresholds",
+      "Automated reporting and trend analysis",
+      "Developer IDE plugins for real-time feedback"
+    ],
+    "technicalDetails": {
+      "architecture": "Microservices with async analysis pipeline",
+      "processing": "Parallel analyzer execution with result aggregation",
+      "storage": "Time-series data for trend analysis",
+      "api": "RESTful API with GraphQL for complex queries"
+    }
+  },
+  {
+    "id": "test-strategy-optimizer",
+    "slug": "test-strategy-optimizer",
+    "title": "Test Strategy Optimizer: 4-Pillar Framework",
+    "subtitle": "Comprehensive testing framework with health monitoring and intelligent optimization",
+    "category": "Test Framework",
+    "duration": "12 months",
+    "team": "5 developers + 2 QA engineers",
+    "technologies": ["TypeScript", "Node.js", "Playwright", "Jest", "Kubernetes", "Grafana"],
+    "overview": "A comprehensive 4-pillar testing framework featuring health monitoring, intelligence analysis, strategy optimization, and automated training modules.",
+    "challenge": "Disparate testing tools and strategies across teams led to inconsistent quality, duplicated effort, and missed edge cases. No unified approach to test strategy optimization.",
+    "solution": "Developed a unified framework with four integrated pillars: health monitoring, intelligence gathering, strategy optimization, and continuous training.",
+    "pillars": [
+      {
+        "name": "Health Monitoring",
+        "description": "Real-time test suite health tracking with failure analysis",
+        "components": ["Test execution monitoring", "Flaky test detection", "Performance tracking", "Resource utilization"]
+      },
+      {
+        "name": "Intelligence Analysis", 
+        "description": "Data-driven insights for test strategy improvements",
+        "components": ["Coverage gap analysis", "Risk assessment", "Historical trend analysis", "Predictive modeling"]
+      },
+      {
+        "name": "Strategy Optimization",
+        "description": "Automated test suite optimization and resource allocation",
+        "components": ["Test prioritization", "Parallel execution planning", "Resource optimization", "Execution scheduling"]
+      },
+      {
+        "name": "Training System",
+        "description": "Continuous learning and knowledge sharing platform",
+        "components": ["Best practices library", "Automated training modules", "Skill assessment", "Knowledge base"]
+      }
+    ],
+    "results": [
+      {
+        "metric": "Test Execution Time",
+        "before": "45 minutes",
+        "after": "12 minutes",
+        "improvement": "73% reduction"
+      },
+      {
+        "metric": "Team Productivity",
+        "before": "2.3 features/sprint",
+        "after": "3.7 features/sprint",
+        "improvement": "61% increase"
+      },
+      {
+        "metric": "Quality Gate Failures",
+        "before": "23% of deployments",
+        "after": "4% of deployments",
+        "improvement": "83% reduction"
+      }
+    ]
+  }
+]
